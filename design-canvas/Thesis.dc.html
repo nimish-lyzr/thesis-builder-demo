@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Create your first thesis</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;background:#ffffff;color:#0a0a0a}
+a{color:#9333ea;text-decoration:none}a:hover{color:#7e22ce}
+@keyframes riseIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes caretBlink{0%,45%{opacity:1}50%,100%{opacity:0}}
+@keyframes checkIn{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:scale(1)}}
+@keyframes glowEdge{0%,100%{box-shadow:0 0 0 0 rgba(147,51,234,.10),0 5px 20px rgba(0,0,0,.05)}50%{box-shadow:0 0 0 5px rgba(147,51,234,.07),0 5px 20px rgba(0,0,0,.05)}}
+.rise{opacity:0;animation:riseIn .6s cubic-bezier(.16,1,.3,1) forwards}
+.caret{display:inline-block;width:2px;height:24px;background:#9333ea;vertical-align:-4px;margin-left:2px;animation:caretBlink 1.05s steps(1) infinite}
+.matter{display:flex;align-items:center;gap:12px;padding:13px 16px;border:1px solid #e5e5e5;border-radius:8px;background:#ffffff;text-align:left;width:100%;box-sizing:border-box;cursor:pointer;font-family:inherit;min-height:48px}
+.matter[aria-pressed="true"]{border-color:#d8c8f5;background:#fdfcff}
+.box{width:18px;height:18px;border-radius:4px;border:1.5px solid #d4d4d4;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.matter[aria-pressed="true"] .box{background:#171717;border-color:#171717;color:#ffffff;animation:checkIn .34s cubic-bezier(.16,1,.3,1) both}
+.matter b{font-size:13.5px;font-weight:500;color:#0a0a0a}
+.matter span{font-size:12px;color:#737373;margin-left:auto}
+.sugg{font-size:12.5px;color:#525252;border:1px solid #e5e5e5;border-radius:9999px;padding:7px 13px;background:#ffffff;cursor:pointer;font-family:inherit}
+.sugg:hover{border-color:#c4b5fd;background:#f1edfb;color:#610c93}
+.cta{display:inline-flex;align-items:center;gap:10px;height:46px;padding:0 24px;border-radius:6px;background:#171717;color:#ffffff;font-size:14.5px;font-weight:500}
+.cta:hover{background:#262626;color:#ffffff}
+.eq i{display:block;width:2px;background:#9333ea;border-radius:1px;animation:eqb .85s ease-in-out infinite}
+.eq i:nth-child(2){animation-delay:.16s}
+.eq i:nth-child(3){animation-delay:.32s}
+@keyframes eqb{0%,100%{height:3px}50%{height:12px}}
+</style>
+</helmet>
+
+<div style="position: relative; width: 1440px; height: 900px; box-sizing: border-box; display: flex; flex-direction: column; background: radial-gradient(900px 560px at 50% -6%, #f6f2fd 0%, #ffffff 58%); overflow: hidden;">
+
+  <div style="height: 60px; flex-shrink: 0; box-sizing: border-box; border-bottom: 1px solid #ece9f3; padding: 0 40px; display: flex; align-items: center; gap: 10px;">
+    <span style="font-size: 22px; line-height: 1; font-weight: 700; color: #a100ff;">&gt;</span>
+    <span style="font-size: 14px; font-weight: 600;">Spotlight</span>
+    <span style="width: 1px; height: 13px; background: #e5e5e5;"></span>
+    <span style="font-size: 13px; color: #525252;">Thesis Builder</span>
+    <span style="flex-grow: 1;"></span>
+    <span style="font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #737373;">Step 3 of 3 — Your question</span>
+    <span style="display: inline-flex; gap: 4px; margin-left: 10px;">
+      <span style="width: 22px; height: 3px; border-radius: 2px; background: #171717;"></span>
+      <span style="width: 22px; height: 3px; border-radius: 2px; background: #171717;"></span>
+      <span style="width: 22px; height: 3px; border-radius: 2px; background: #171717;"></span>
+    </span>
+  </div>
+
+  <div style="flex-grow: 1; box-sizing: border-box; padding: 54px 60px 44px; display: flex; flex-direction: column; align-items: center;">
+
+    <h1 class="rise" style="margin: 0; font-size: 40px; line-height: 46px; font-weight: 600; letter-spacing: -.03em; text-align: center;">What market do you want to understand?</h1>
+    <p class="rise" style="margin: 13px 0 0; font-size: 15.5px; line-height: 24px; color: #525252; text-align: center; max-width: 600px; animation-delay: .06s;">One question is enough. Your agents turn it into a research plan, a market map and a company universe.</p>
+
+    <div class="rise" style="width: 860px; margin-top: 40px; box-sizing: border-box; border: 1px solid #d8c8f5; border-radius: 12px; background: #ffffff; padding: 24px 26px 18px; animation-delay: .14s; animation: riseIn .6s cubic-bezier(.16,1,.3,1) .14s forwards, glowEdge 4.2s ease-in-out 1s infinite;">
+      <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 14px;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#9333ea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6.3 6.3l2.8 2.8M14.9 14.9l2.8 2.8M17.7 6.3l-2.8 2.8M9.1 14.9l-2.8 2.8"></path></svg>
+        <span style="font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8b7ba8;">Your thesis question</span>
+      </div>
+      <p style="margin: 0; min-height: 68px; font-size: 22px; line-height: 34px; font-weight: 500; letter-spacing: -.018em; color: #171717;">{{typed}}<span class="caret"></span></p>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; padding-top: 16px; border-top: 1px solid #f1f1f1;">
+        <span style="font-size: 12px; color: #a3a3a3; align-self: center; margin-right: 2px;">Or start from</span>
+        <button type="button" class="sugg">Physical AI and robotics</button>
+        <button type="button" class="sugg">Sovereign cloud in Europe</button>
+        <button type="button" class="sugg">Agentic software for financial services</button>
+      </div>
+    </div>
+
+    <div class="rise" style="width: 860px; margin-top: 34px; animation-delay: .9s;">
+      <p style="margin: 0 0 12px; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #737373;">What matters most?</p>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px;">
+        <button type="button" class="matter" aria-pressed="true"><span class="box"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5.2 5.2L20 7"></path></svg></span><b>Strategic relevance to Accenture</b><span>Weighted highest</span></button>
+        <button type="button" class="matter" aria-pressed="true"><span class="box"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5.2 5.2L20 7"></path></svg></span><b>Enterprise adoption</b><span></span></button>
+        <button type="button" class="matter" aria-pressed="true"><span class="box"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5.2 5.2L20 7"></path></svg></span><b>Emerging whitespace</b><span></span></button>
+        <button type="button" class="matter" aria-pressed="true"><span class="box"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5.2 5.2L20 7"></path></svg></span><b>Partnership potential</b><span></span></button>
+        <button type="button" class="matter" aria-pressed="false"><span class="box"></span><b>Investment opportunities</b><span>Off</span></button>
+        <div style="display: flex; align-items: center; gap: 10px; padding: 0 4px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#a3a3a3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5M12 8h.01"></path></svg>
+          <span style="font-size: 12px; line-height: 18px; color: #737373;">These weight how companies are scored. You can change them after the first run.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="rise" style="margin-top: auto; padding-top: 34px; display: flex; align-items: center; gap: 18px; animation-delay: 1.05s;">
+      <a class="cta" href="Globe.dc.html">Build Thesis
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+      <span style="font-size: 12.5px; color: #737373;">Five agents, roughly four minutes. You can leave — it finishes without you.</span>
+    </div>
+  </div>
+
+  <div style="position: absolute; right: 22px; bottom: 20px; z-index: 60; display: flex; align-items: center; gap: 4px; height: 44px; box-sizing: border-box; background: rgba(255,255,255,.95); border: 1px solid #e5e5e5; border-radius: 9999px; padding: 0 6px 0 14px; box-shadow: 0 5px 20px rgba(0,0,0,.08); backdrop-filter: blur(4px);">
+    <sc-if value="{{speaking}}" hint-placeholder-val="{{true}}">
+      <span class="eq" style="display: inline-flex; align-items: flex-end; gap: 2px; height: 12px; margin-right: 6px;"><i></i><i></i><i></i></span>
+    </sc-if>
+    <span style="font-size: 11.5px; font-weight: 500; color: #525252; white-space: nowrap;">{{voiceLabel}}</span>
+    <button type="button" onClick="{{toggleVoice}}" aria-label="Turn narration on or off" style="width: 36px; height: 36px; margin-left: 6px; border: 0; border-radius: 9999px; background: transparent; color: #404040; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{voiceIcon}}"></path></svg>
+    </button>
+    <button type="button" onClick="{{replayVoice}}" aria-label="Replay narration" style="width: 36px; height: 36px; border: 0; border-radius: 9999px; background: transparent; color: #404040; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 6.3"></path><path d="M20 5v6h-6"></path></svg>
+    </button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+var LINE = 'One question is enough. Where should Accenture be focusing within AI infrastructure over the next three to five years? You tell it what matters, and the agents turn that into a research plan.';
+
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.full = 'Where should Accenture be investing or focusing within AI infrastructure over the next 3–5 years?';
+    this.state = { n: 0 };
+  }
+  componentDidMount() {
+    this.initVoice(LINE);
+    var self = this;
+    this.timer = setInterval(function () {
+      if (self.state.n >= self.full.length) { clearInterval(self.timer); return; }
+      self.setState({ n: self.state.n + 1 });
+    }, 26);
+  }
+  componentWillUnmount() {
+    this.stopVoice(); clearInterval(this.timer); }
+
+  /* ---------- narration ----------
+     Spoken by the browser itself through the Web Speech API: no audio files,
+     no service, nothing to sign in to. The persona picker arms it in session
+     storage; each screen then reads its own line once, and the chip in the
+     corner turns it off for good.
+
+     Browsers require a user gesture before they will speak, and they do not
+     say so — speak() simply does nothing. So after asking we check whether
+     anything actually started, and if it did not the chip invites a tap
+     rather than sitting there claiming to be on. */
+  initVoice(line, autoSpeak) {
+    this.line = line;
+    var stored = null;
+    try { stored = sessionStorage.getItem('tb-voice'); } catch (e) { stored = null; }
+    var armed = stored === null ? true : stored === 'on';
+    this.setState({ voiceOn: armed, speaking: false, blocked: false });
+    if (armed && autoSpeak !== false) {
+      var self = this;
+      this.vt = setTimeout(function () { self.say(); }, 1400);
+    }
+  }
+
+  say() {
+    var self = this;
+    var synth = null;
+    try { synth = window.speechSynthesis; } catch (e) { synth = null; }
+    if (!synth) { this.setState({ blocked: true }); return; }
+    try {
+      synth.cancel();
+      var u = new SpeechSynthesisUtterance(this.line);
+      u.rate = 0.98;
+      u.pitch = 1;
+      var voices = synth.getVoices() || [];
+      for (var i = 0; i < voices.length; i++) {
+        if (/en[-_]GB/i.test(voices[i].lang)) { u.voice = voices[i]; break; }
+      }
+      u.onend = function () { self.setState({ speaking: false }); };
+      synth.speak(u);
+      this.setState({ speaking: true, blocked: false });
+      clearTimeout(this.vcheck);
+      this.vcheck = setTimeout(function () {
+        var live = false;
+        try { live = synth.speaking || synth.pending; } catch (e) { live = false; }
+        if (!live) self.setState({ speaking: false, blocked: true });
+      }, 700);
+    } catch (e) {
+      this.setState({ speaking: false, blocked: true });
+    }
+  }
+
+  hush() { try { if (window.speechSynthesis) window.speechSynthesis.cancel(); } catch (e) {} }
+
+  stopVoice() { clearTimeout(this.vt); clearTimeout(this.vcheck); this.hush(); }
+
+  voiceVals() {
+    var self = this;
+    var st = this.state || {};
+    var on = !!st.voiceOn;
+    var blocked = !!st.blocked;
+    return {
+      voiceOn: on && !blocked,
+      voiceBlocked: on && blocked,
+      voiceOff: !on,
+      speaking: !!st.speaking,
+      voiceLabel: !on ? 'Narration off' : (blocked ? 'Tap to play narration' : 'Narration on'),
+      voiceIcon: on && !blocked
+        ? 'M11 5 6 9H3v6h3l5 4zM16 9.5a4 4 0 0 1 0 5M19 7a8 8 0 0 1 0 10'
+        : 'M11 5 6 9H3v6h3l5 4zM17 9.5l4.5 5M21.5 9.5l-4.5 5',
+      toggleVoice: function () {
+        var next = !on || blocked;
+        try { sessionStorage.setItem('tb-voice', next ? 'on' : 'off'); } catch (e) {}
+        self.setState({ voiceOn: next, blocked: false });
+        if (next) self.say(); else { self.hush(); self.setState({ speaking: false }); }
+      },
+      replayVoice: function () {
+        try { sessionStorage.setItem('tb-voice', 'on'); } catch (e) {}
+        self.setState({ voiceOn: true, blocked: false });
+        self.say();
+      }
+    };
+  }
+
+  screenVals() {
+    return { typed: this.full.slice(0, this.state.n) };
+  }
+
+  renderVals() {
+    var vals = this.screenVals();
+    var voice = this.voiceVals();
+    for (var k in voice) vals[k] = voice[k];
+    return vals;
+  }
+}
+</script>
+</body>
+</html>

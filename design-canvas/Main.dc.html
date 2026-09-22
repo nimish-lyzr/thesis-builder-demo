@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Onboarding — build your market intelligence team</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;background:#ffffff;color:#0a0a0a}
+a{color:#9333ea;text-decoration:none}
+a:hover{color:#7e22ce}
+@keyframes riseIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes orbitSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes orbitSpinBack{from{transform:rotate(360deg)}to{transform:rotate(0deg)}}
+@keyframes breathe{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.06);opacity:.85}}
+@keyframes ping{0%{transform:scale(.6);opacity:.55}70%{transform:scale(2.1);opacity:0}100%{transform:scale(2.1);opacity:0}}
+.rise{opacity:0;animation:riseIn .62s cubic-bezier(.16,1,.3,1) forwards}
+.lab{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#737373;margin:0 0 8px}
+.fld{width:100%;box-sizing:border-box;height:40px;border:1px solid #e5e5e5;border-radius:4px;background:#ffffff;padding:0 12px;font:500 13px/40px 'Inter',sans-serif;color:#0a0a0a}
+.fld:focus{outline:none;border-color:#171717}
+.chip{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 11px;border-radius:9999px;border:1px solid #c4b5fd;background:#f1edfb;color:#610c93;font-size:12.5px;font-weight:500}
+.chip-add{border:1px dashed #d4d4d4;background:#ffffff;color:#737373}
+.seg{display:inline-flex;border:1px solid #e5e5e5;border-radius:4px;overflow:hidden;background:#fafafa}
+.seg button{appearance:none;border:0;background:transparent;font:500 12.5px 'Inter',sans-serif;color:#525252;height:32px;padding:0 14px;cursor:pointer;border-right:1px solid #e5e5e5}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:#171717;color:#ffffff}
+.pick{display:flex;flex-direction:column;gap:3px;align-items:flex-start;text-align:left;padding:11px 12px;border:1px solid #e5e5e5;border-radius:6px;background:#ffffff;cursor:pointer;min-height:44px;font-family:inherit}
+.pick b{font-size:13px;font-weight:600;color:#0a0a0a}
+.pick span{font-size:11.5px;color:#737373;line-height:1.35}
+.pick[aria-pressed="true"]{border-color:#171717;background:#fafafa;box-shadow:0 1px 2px rgba(0,0,0,.05)}
+.cta{display:inline-flex;align-items:center;gap:10px;height:44px;padding:0 22px;border-radius:6px;background:#171717;color:#ffffff;font-size:14px;font-weight:500;box-shadow:0 1px 2px rgba(0,0,0,.05)}
+.cta:hover{background:#262626;color:#ffffff}
+.ring{position:absolute;left:50%;top:50%;border-radius:50%;border:1px solid rgba(140,90,190,.18);transform-origin:50% 50%}
+.sat{position:absolute;left:50%;top:0;width:10px;height:10px;margin-left:-5px;margin-top:-5px;border-radius:50%;background:#9333ea;box-shadow:0 0 0 4px rgba(147,51,234,.14)}
+.eq i{display:block;width:2px;background:#9333ea;border-radius:1px;animation:eqb .85s ease-in-out infinite}
+.eq i:nth-child(2){animation-delay:.16s}
+.eq i:nth-child(3){animation-delay:.32s}
+@keyframes eqb{0%,100%{height:3px}50%{height:12px}}
+</style>
+</helmet>
+
+<div style="position: relative; width: 1440px; height: 900px; box-sizing: border-box; display: flex; background: #ffffff; overflow: hidden;">
+
+  <div style="width: 790px; box-sizing: border-box; padding: 56px 72px 48px; display: flex; flex-direction: column;">
+
+    <div class="rise" style="display: flex; align-items: center; gap: 10px; animation-delay: .04s;">
+      <span style="font-size: 26px; line-height: 1; font-weight: 700; color: #a100ff;">&gt;</span>
+      <span style="font-size: 15px; font-weight: 600; letter-spacing: -.01em;">Spotlight</span>
+      <span style="width: 1px; height: 14px; background: #e5e5e5;"></span>
+      <span style="font-size: 13.5px; color: #525252;">Thesis Builder</span>
+      <span style="margin-left: 2px; font-size: 10px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #525252; border: 1px solid #e5e5e5; border-radius: 4px; padding: 2px 6px;">Beta</span>
+    </div>
+
+    <div class="rise" style="margin-top: 52px; animation-delay: .1s;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span class="lab" style="margin: 0;">Step 1 of 3 — Organisation</span>
+        <span style="display: inline-flex; gap: 4px;">
+          <span style="width: 22px; height: 3px; border-radius: 2px; background: #171717;"></span>
+          <span style="width: 22px; height: 3px; border-radius: 2px; background: #e5e5e5;"></span>
+          <span style="width: 22px; height: 3px; border-radius: 2px; background: #e5e5e5;"></span>
+        </span>
+      </div>
+      <h1 style="margin: 16px 0 0; font-size: 38px; line-height: 44px; font-weight: 600; letter-spacing: -.028em; max-width: 520px;">Build your market intelligence team</h1>
+      <p style="margin: 14px 0 0; font-size: 16px; line-height: 25px; color: #525252; max-width: 480px;">Thesis Builder learns how your organization thinks before it starts researching the market.</p>
+    </div>
+
+    <div style="margin-top: 38px; display: flex; flex-direction: column; gap: 22px;">
+
+      <div style="display: flex; gap: 20px;">
+        <div class="rise" style="width: 244px; animation-delay: .18s;">
+          <p class="lab">Company</p>
+          <label for="co" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">Company</label>
+          <div style="display: flex; align-items: center; gap: 9px; height: 40px; border: 1px solid #e5e5e5; border-radius: 4px; padding: 0 12px;">
+            <span style="font-size: 17px; font-weight: 700; color: #a100ff; line-height: 1;">&gt;</span>
+            <input id="co" class="fld" style="border: 0; height: 38px; padding: 0; flex-grow: 1;" value="Accenture">
+          </div>
+        </div>
+        <div class="rise" style="flex-grow: 1; animation-delay: .22s;">
+          <p class="lab">What does your company do?</p>
+          <label for="does" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">What does your company do?</label>
+          <input id="does" class="fld" value="Consulting, technology and managed services">
+        </div>
+      </div>
+
+      <div class="rise" style="animation-delay: .26s;">
+        <p class="lab">Strategic priorities</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+          <span class="chip">AI infrastructure</span>
+          <span class="chip">Enterprise AI</span>
+          <span class="chip">Cloud modernization</span>
+          <span class="chip">Industry solutions</span>
+          <button type="button" class="chip chip-add" style="cursor: pointer;">+ Add priority</button>
+        </div>
+      </div>
+
+      <div class="rise" style="animation-delay: .3s;">
+        <p class="lab">Primary geography</p>
+        <div class="seg">
+          <button type="button" aria-pressed="true">Global</button>
+          <button type="button" aria-pressed="false">North America</button>
+          <button type="button" aria-pressed="false">Europe</button>
+          <button type="button" aria-pressed="false">Asia Pacific</button>
+        </div>
+      </div>
+
+      <div class="rise" style="animation-delay: .34s;">
+        <p class="lab">What are you looking to do?</p>
+        <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px;">
+          <button type="button" class="pick" aria-pressed="false"><b>Invest</b><span>Deploy capital into the market</span></button>
+          <button type="button" class="pick" aria-pressed="false"><b>Partner</b><span>Find delivery and tech partners</span></button>
+          <button type="button" class="pick" aria-pressed="false"><b>Acquire</b><span>Build an acquisition pipeline</span></button>
+          <button type="button" class="pick" aria-pressed="true"><b>Track Market</b><span>Watch a market continuously</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="rise" style="margin-top: auto; padding-top: 34px; display: flex; align-items: center; gap: 18px; animation-delay: .4s;">
+      <a class="cta" href="Team.dc.html">Continue
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+      <span style="font-size: 12.5px; color: #737373;">Pre-filled from your Accenture workspace. Everything here stays editable.</span>
+    </div>
+  </div>
+
+  <div style="flex-grow: 1; position: relative; background: #f4f4f8; border-left: 1px solid #e9e7f0; overflow: hidden;">
+    <div style="position: absolute; inset: 0; background: radial-gradient(520px 520px at 54% 42%, rgba(168,110,214,.16), rgba(244,244,248,0) 70%);"></div>
+
+    <div style="position: absolute; left: 50%; top: 44%; width: 0; height: 0;">
+      <div class="ring" style="width: 520px; height: 520px; margin: -260px 0 0 -260px; animation: orbitSpin 46s linear infinite;">
+        <span class="sat" style="background: #16a34a; box-shadow: 0 0 0 4px rgba(22,163,74,.14);"></span>
+      </div>
+      <div class="ring" style="width: 380px; height: 380px; margin: -190px 0 0 -190px; border-color: rgba(140,90,190,.24); animation: orbitSpinBack 32s linear infinite;">
+        <span class="sat"></span>
+      </div>
+      <div class="ring" style="width: 244px; height: 244px; margin: -122px 0 0 -122px; border-color: rgba(140,90,190,.3); animation: orbitSpin 21s linear infinite;">
+        <span class="sat" style="background: #1d4ed8; box-shadow: 0 0 0 4px rgba(29,78,216,.14);"></span>
+      </div>
+      <div style="position: absolute; left: -61px; top: -61px; width: 122px; height: 122px; border-radius: 50%; background: radial-gradient(circle at 36% 32%, #ffffff, #efe6fb); border: 1px solid rgba(140,90,190,.3); display: flex; align-items: center; justify-content: center; animation: breathe 5.5s ease-in-out infinite;">
+        <span style="font-size: 34px; font-weight: 700; color: #a100ff; line-height: 1;">&gt;</span>
+      </div>
+      <div style="position: absolute; left: -61px; top: -61px; width: 122px; height: 122px; border-radius: 50%; border: 1px solid rgba(147,51,234,.5); animation: ping 4.2s cubic-bezier(.16,1,.3,1) infinite;"></div>
+    </div>
+
+    <div style="position: absolute; left: 56px; right: 56px; bottom: 56px;">
+      <p class="rise" style="margin: 0 0 14px; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8b7ba8; animation-delay: .5s;">What gets built from this</p>
+      <div style="display: flex; flex-direction: column; gap: 9px;">
+        <div class="rise" style="display: flex; align-items: center; gap: 11px; background: rgba(255,255,255,.82); border: 1px solid #e9e4f2; border-radius: 8px; padding: 12px 14px; animation-delay: .56s;">
+          <span style="width: 7px; height: 7px; border-radius: 50%; background: #9333ea;"></span>
+          <span style="font-size: 13px; color: #262626; flex-grow: 1;">A research team briefed on Accenture's priorities</span>
+        </div>
+        <div class="rise" style="display: flex; align-items: center; gap: 11px; background: rgba(255,255,255,.82); border: 1px solid #e9e4f2; border-radius: 8px; padding: 12px 14px; animation-delay: .64s;">
+          <span style="width: 7px; height: 7px; border-radius: 50%; background: #1d4ed8;"></span>
+          <span style="font-size: 13px; color: #262626; flex-grow: 1;">A market map scored against what you care about</span>
+        </div>
+        <div class="rise" style="display: flex; align-items: center; gap: 11px; background: rgba(255,255,255,.82); border: 1px solid #e9e4f2; border-radius: 8px; padding: 12px 14px; animation-delay: .72s;">
+          <span style="width: 7px; height: 7px; border-radius: 50%; background: #16a34a;"></span>
+          <span style="font-size: 13px; color: #262626; flex-grow: 1;">Monitoring that keeps running after the thesis ships</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="position: absolute; right: 22px; bottom: 20px; z-index: 60; display: flex; align-items: center; gap: 4px; height: 44px; box-sizing: border-box; background: rgba(255,255,255,.95); border: 1px solid #e5e5e5; border-radius: 9999px; padding: 0 6px 0 14px; box-shadow: 0 5px 20px rgba(0,0,0,.08); backdrop-filter: blur(4px);">
+    <sc-if value="{{speaking}}" hint-placeholder-val="{{true}}">
+      <span class="eq" style="display: inline-flex; align-items: flex-end; gap: 2px; height: 12px; margin-right: 6px;"><i></i><i></i><i></i></span>
+    </sc-if>
+    <span style="font-size: 11.5px; font-weight: 500; color: #525252; white-space: nowrap;">{{voiceLabel}}</span>
+    <button type="button" onClick="{{toggleVoice}}" aria-label="Turn narration on or off" style="width: 36px; height: 36px; margin-left: 6px; border: 0; border-radius: 9999px; background: transparent; color: #404040; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{voiceIcon}}"></path></svg>
+    </button>
+    <button type="button" onClick="{{replayVoice}}" aria-label="Replay narration" style="width: 36px; height: 36px; border: 0; border-radius: 9999px; background: transparent; color: #404040; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 6.3"></path><path d="M20 5v6h-6"></path></svg>
+    </button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+var LINE = 'Thesis Builder starts by learning how Accenture thinks. Your priorities, your geography, and what you\'re actually trying to do. Everything after this is shaped by what you put on this screen.';
+
+class Component extends DCLogic {
+  componentDidMount() { this.initVoice(LINE); }
+  componentWillUnmount() { this.stopVoice(); }
+
+  /* ---------- narration ----------
+     Spoken by the browser itself through the Web Speech API: no audio files,
+     no service, nothing to sign in to. The persona picker arms it in session
+     storage; each screen then reads its own line once, and the chip in the
+     corner turns it off for good.
+
+     Browsers require a user gesture before they will speak, and they do not
+     say so — speak() simply does nothing. So after asking we check whether
+     anything actually started, and if it did not the chip invites a tap
+     rather than sitting there claiming to be on. */
+  initVoice(line, autoSpeak) {
+    this.line = line;
+    var stored = null;
+    try { stored = sessionStorage.getItem('tb-voice'); } catch (e) { stored = null; }
+    var armed = stored === null ? true : stored === 'on';
+    this.setState({ voiceOn: armed, speaking: false, blocked: false });
+    if (armed && autoSpeak !== false) {
+      var self = this;
+      this.vt = setTimeout(function () { self.say(); }, 1400);
+    }
+  }
+
+  say() {
+    var self = this;
+    var synth = null;
+    try { synth = window.speechSynthesis; } catch (e) { synth = null; }
+    if (!synth) { this.setState({ blocked: true }); return; }
+    try {
+      synth.cancel();
+      var u = new SpeechSynthesisUtterance(this.line);
+      u.rate = 0.98;
+      u.pitch = 1;
+      var voices = synth.getVoices() || [];
+      for (var i = 0; i < voices.length; i++) {
+        if (/en[-_]GB/i.test(voices[i].lang)) { u.voice = voices[i]; break; }
+      }
+      u.onend = function () { self.setState({ speaking: false }); };
+      synth.speak(u);
+      this.setState({ speaking: true, blocked: false });
+      clearTimeout(this.vcheck);
+      this.vcheck = setTimeout(function () {
+        var live = false;
+        try { live = synth.speaking || synth.pending; } catch (e) { live = false; }
+        if (!live) self.setState({ speaking: false, blocked: true });
+      }, 700);
+    } catch (e) {
+      this.setState({ speaking: false, blocked: true });
+    }
+  }
+
+  hush() { try { if (window.speechSynthesis) window.speechSynthesis.cancel(); } catch (e) {} }
+
+  stopVoice() { clearTimeout(this.vt); clearTimeout(this.vcheck); this.hush(); }
+
+  voiceVals() {
+    var self = this;
+    var st = this.state || {};
+    var on = !!st.voiceOn;
+    var blocked = !!st.blocked;
+    return {
+      voiceOn: on && !blocked,
+      voiceBlocked: on && blocked,
+      voiceOff: !on,
+      speaking: !!st.speaking,
+      voiceLabel: !on ? 'Narration off' : (blocked ? 'Tap to play narration' : 'Narration on'),
+      voiceIcon: on && !blocked
+        ? 'M11 5 6 9H3v6h3l5 4zM16 9.5a4 4 0 0 1 0 5M19 7a8 8 0 0 1 0 10'
+        : 'M11 5 6 9H3v6h3l5 4zM17 9.5l4.5 5M21.5 9.5l-4.5 5',
+      toggleVoice: function () {
+        var next = !on || blocked;
+        try { sessionStorage.setItem('tb-voice', next ? 'on' : 'off'); } catch (e) {}
+        self.setState({ voiceOn: next, blocked: false });
+        if (next) self.say(); else { self.hush(); self.setState({ speaking: false }); }
+      },
+      replayVoice: function () {
+        try { sessionStorage.setItem('tb-voice', 'on'); } catch (e) {}
+        self.setState({ voiceOn: true, blocked: false });
+        self.say();
+      }
+    };
+  }
+
+  screenVals() { return {}; }
+
+  renderVals() {
+    var vals = this.screenVals();
+    var voice = this.voiceVals();
+    for (var k in voice) vals[k] = voice[k];
+    return vals;
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Thesis Builder — pick a walkthrough</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;background:#ffffff;color:#0a0a0a}
+a{color:#9333ea;text-decoration:none}a:hover{color:#7e22ce}
+@keyframes riseIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes eqb{0%,100%{height:3px}50%{height:12px}}
+.rise{opacity:0;animation:riseIn .6s cubic-bezier(.16,1,.3,1) forwards}
+.eq i{display:block;width:2px;background:#9333ea;border-radius:1px;animation:eqb .85s ease-in-out infinite}
+.eq i:nth-child(2){animation-delay:.16s}
+.eq i:nth-child(3){animation-delay:.32s}
+.tabs{display:inline-flex;gap:4px;padding:4px;border:1px solid #e5e5e5;border-radius:9999px;background:#fafafa}
+.tabs button{appearance:none;border:0;background:transparent;font-family:inherit;font-size:12.5px;font-weight:500;color:#525252;height:32px;padding:0 15px;border-radius:9999px;cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+.tabs button[aria-pressed="true"]{background:#171717;color:#ffffff}
+.tabs em{font-style:normal;font-size:11px;opacity:.7}
+.card{box-sizing:border-box;display:flex;flex-direction:column;background:#ffffff;border:1px solid #e5e5e5;border-radius:12px;padding:22px 22px 20px;text-align:left}
+.card:hover{border-color:#d4d4d4;box-shadow:0 5px 20px rgba(0,0,0,.05)}
+.card h3{margin:0;font-size:12.5px;font-weight:600;letter-spacing:.02em;color:#525252}
+.card h2{margin:10px 0 0;font-size:19px;line-height:26px;font-weight:600;letter-spacing:-.02em;color:#0a0a0a}
+.card > p{margin:11px 0 0;font-size:13px;line-height:21px;color:#525252}
+.tile{width:34px;height:34px;border-radius:9px;display:flex;align-items:center;justify-content:center;background:#f1edfb;color:#7e22ce;border:1px solid #e6dcfa;flex-shrink:0}
+.stat{display:flex;align-items:baseline;gap:10px;padding:9px 0;border-top:1px solid #f1f1f1}
+.stat span{font-size:11px;color:#8b8b8b;width:118px;flex-shrink:0}
+.stat b{font-size:12.5px;font-weight:600;color:#171717}
+.go{display:inline-flex;align-items:center;justify-content:center;gap:9px;height:44px;border-radius:8px;background:#171717;color:#ffffff;font-size:13.5px;font-weight:500;font-family:inherit;border:0;cursor:pointer;width:100%;box-sizing:border-box}
+.go:hover{background:#262626;color:#ffffff}
+</style>
+</helmet>
+
+<div style="position: relative; width: 1440px; height: 900px; box-sizing: border-box; display: flex; flex-direction: column; background: radial-gradient(1100px 520px at 18% -10%, #f7f3fd 0%, #ffffff 56%); overflow: hidden;">
+
+  <div style="height: 54px; flex-shrink: 0; box-sizing: border-box; border-bottom: 1px solid #ececec; padding: 0 40px; display: flex; align-items: center; gap: 10px;">
+    <span style="font-size: 21px; line-height: 1; font-weight: 700; color: #a100ff;">&gt;</span>
+    <span style="font-size: 14px; font-weight: 600;">Spotlight</span>
+    <span style="width: 1px; height: 13px; background: #e5e5e5;"></span>
+    <span style="font-size: 13px; color: #525252;">Thesis Builder</span>
+    <span style="flex-grow: 1;"></span>
+    <span style="font-size: 12px; color: #8b8b8b;">Interactive demo · no sign-in</span>
+  </div>
+
+  <div style="flex-grow: 1; box-sizing: border-box; padding: 46px 72px 0; display: flex; flex-direction: column;">
+
+    <p class="rise" style="margin: 0; font-size: 11px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; color: #8b7ba8;">Thesis Builder by Lyzr · for Accenture</p>
+    <h1 class="rise" style="margin: 16px 0 0; font-size: 46px; line-height: 52px; font-weight: 600; letter-spacing: -.033em; max-width: 880px; animation-delay: .05s;">Build a market thesis. Then let it keep itself current.</h1>
+    <p class="rise" style="margin: 18px 0 0; font-size: 15.5px; line-height: 25px; color: #525252; max-width: 700px; animation-delay: .1s;">This is Thesis Builder as it looks the week Accenture's first thesis goes live. Four narrated walkthroughs — three by the seat you sit in, one by the whole story. Pick one, or skip the narration and explore freely.</p>
+
+    <div class="rise" style="margin-top: 26px; display: flex; align-items: center; gap: 14px; animation-delay: .15s;">
+      <span class="tabs">
+        <button type="button" aria-pressed="{{byPersona}}" onClick="{{showPersona}}">By persona <em>3</em></button>
+        <button type="button" aria-pressed="{{byStory}}" onClick="{{showStory}}">The full story <em>1</em></button>
+      </span>
+      <span style="font-size: 12px; color: #a3a3a3;">Each one starts you somewhere different and talks you through it.</span>
+    </div>
+
+    <sc-if value="{{byPersona}}" hint-placeholder-val="{{true}}">
+      <div style="margin-top: 22px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px;">
+
+        <div class="card rise" style="animation-delay: .2s;">
+          <div style="display: flex; align-items: center; gap: 11px;">
+            <span class="tile"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3h7v7H3zM14 14h7v7h-7zM14 3h7v7h-7z" stroke-dasharray="2.5 2.5"></path></svg></span>
+            <h3>Head of AI &amp; Data Practice</h3>
+          </div>
+          <h2>The market map your team can argue with</h2>
+          <p>You start on the market map: eight segments placed by how contested they are, the gap nobody has built into, and the thread where your practice lead changes the thesis.</p>
+          <div style="margin-top: 18px;">
+            <span class="stat"><span>Segments mapped</span><b>8, by competitive density</b></span>
+            <span class="stat"><span>Whitespace gaps</span><b>4 · one of them unserved</b></span>
+            <span class="stat"><span>Relevant to Accenture</span><b>23 of 126 companies</b></span>
+          </div>
+          <div style="margin-top: auto; padding-top: 18px;">
+            <a class="go" href="Whitespace.dc.html" onClick="{{startPractice}}">Start here
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="card rise" style="animation-delay: .26s;">
+          <div style="display: flex; align-items: center; gap: 11px;">
+            <span class="tile" style="background: #eff6ff; color: #1d4ed8; border-color: #d5e4fd;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V8l6-4 6 4v13"></path><path d="M15 21V11l6 3v7"></path></svg></span>
+            <h3>Ventures / Investment Lead</h3>
+          </div>
+          <h2>126 companies, scored against your thesis</h2>
+          <p>You start on the company universe: fit scores, stage, the latest signal on each one — and a column you can point at the whole list in plain English.</p>
+          <div style="margin-top: 18px;">
+            <span class="stat"><span>Companies scored</span><b>126 · sorted by fit</b></span>
+            <span class="stat"><span>Top thesis fit</span><b>91 / 100</b></span>
+            <span class="stat"><span>Asked of all 126</span><b>Who has Fortune 500 customers</b></span>
+          </div>
+          <div style="margin-top: auto; padding-top: 18px;">
+            <a class="go" href="Companies.dc.html" onClick="{{startVentures}}">Start here
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="card rise" style="animation-delay: .32s;">
+          <div style="display: flex; align-items: center; gap: 11px;">
+            <span class="tile" style="background: #f0fdf4; color: #15803d; border-color: #d3f0dd;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h11l4 4v12H5z"></path><path d="M9 12h7M9 16h5"></path></svg></span>
+            <h3>Client Account Lead</h3>
+          </div>
+          <h2>Something you can put in front of a client on Monday</h2>
+          <p>You start on the finished thesis: six sections, eighteen slides in Accenture's template, and every claim with the source it came from attached.</p>
+          <div style="margin-top: 18px;">
+            <span class="stat"><span>Slides generated</span><b>18, action-titled</b></span>
+            <span class="stat"><span>Sources cited</span><b>142 · all linked</b></span>
+            <span class="stat"><span>Time to build</span><b>4 min 12 s</b></span>
+          </div>
+          <div style="margin-top: auto; padding-top: 18px;">
+            <a class="go" href="ThesisDoc.dc.html" onClick="{{startClient}}">Start here
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{byStory}}" hint-placeholder-val="{{false}}">
+      <div style="margin-top: 22px; display: flex; gap: 18px;">
+        <div class="card rise" style="flex-grow: 1;">
+          <div style="display: flex; align-items: center; gap: 11px;">
+            <span class="tile"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg></span>
+            <h3>The whole story, in order</h3>
+          </div>
+          <h2 style="max-width: 640px;">From one question to a thesis that updates itself without you</h2>
+          <p style="max-width: 680px;">Onboarding, the five agents, the globe as they research, the market, the gap, the companies, the finished thesis, your practice lead's comment — then thirty days pass, the market moves, and the thesis proposes its own update.</p>
+          <div style="margin-top: 20px; display: flex; gap: 40px;">
+            <span class="stat" style="border: 0; padding: 0;"><span>Screens</span><b>14</b></span>
+            <span class="stat" style="border: 0; padding: 0;"><span>Narrated</span><b>About 6 minutes</b></span>
+            <span class="stat" style="border: 0; padding: 0;"><span>Agents at work</span><b>5</b></span>
+            <span class="stat" style="border: 0; padding: 0;"><span>Ends on</span><b>Your live globe</b></span>
+          </div>
+          <div style="margin-top: 24px; max-width: 280px;">
+            <a class="go" href="Main.dc.html" onClick="{{startTour}}">Start from the beginning
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <div class="rise" style="margin-top: auto; padding: 26px 0 24px; display: flex; align-items: center; gap: 18px; border-top: 1px solid #f1f1f1; animation-delay: .4s;">
+      <a href="Main.dc.html" onClick="{{startSilent}}" style="font-size: 13px; font-weight: 500;">Skip the narration and explore freely →</a>
+      <span style="flex-grow: 1;"></span>
+      <span style="font-size: 11.5px; color: #a3a3a3;">Representative data. Nothing here is connected to a live account.</span>
+    </div>
+  </div>
+
+  <div style="position: absolute; right: 22px; bottom: 20px; z-index: 60; display: flex; align-items: center; gap: 4px; height: 44px; box-sizing: border-box; background: rgba(255,255,255,.95); border: 1px solid #e5e5e5; border-radius: 9999px; padding: 0 6px 0 14px; box-shadow: 0 5px 20px rgba(0,0,0,.08); backdrop-filter: blur(4px);">
+    <sc-if value="{{speaking}}" hint-placeholder-val="{{true}}">
+      <span class="eq" style="display: inline-flex; align-items: flex-end; gap: 2px; height: 12px; margin-right: 6px;"><i></i><i></i><i></i></span>
+    </sc-if>
+    <span style="font-size: 11.5px; font-weight: 500; color: #525252; white-space: nowrap;">{{voiceLabel}}</span>
+    <button type="button" onClick="{{toggleVoice}}" aria-label="Turn narration on or off" style="width: 36px; height: 36px; margin-left: 6px; border: 0; border-radius: 9999px; background: transparent; color: #404040; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{voiceIcon}}"></path></svg>
+    </button>
+    <button type="button" onClick="{{replayVoice}}" aria-label="Replay narration" style="width: 36px; height: 36px; border: 0; border-radius: 9999px; background: transparent; color: #404040; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 6.3"></path><path d="M20 5v6h-6"></path></svg>
+    </button>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+var LINE = 'Pick the seat you sit in, and the demo starts there — narrated.';
+
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { tab: 'persona' }; }
+  componentDidMount() { this.initVoice(LINE, false); }
+  componentWillUnmount() { this.stopVoice(); }
+
+
+  /* ---------- narration ----------
+     Spoken by the browser itself through the Web Speech API: no audio files,
+     no service, nothing to sign in to. The persona picker arms it in session
+     storage; each screen then reads its own line once, and the chip in the
+     corner turns it off for good.
+
+     Browsers require a user gesture before they will speak, and they do not
+     say so — speak() simply does nothing. So after asking we check whether
+     anything actually started, and if it did not the chip invites a tap
+     rather than sitting there claiming to be on. */
+  initVoice(line, autoSpeak) {
+    this.line = line;
+    var stored = null;
+    try { stored = sessionStorage.getItem('tb-voice'); } catch (e) { stored = null; }
+    var armed = stored === null ? true : stored === 'on';
+    this.setState({ voiceOn: armed, speaking: false, blocked: false });
+    if (armed && autoSpeak !== false) {
+      var self = this;
+      this.vt = setTimeout(function () { self.say(); }, 1400);
+    }
+  }
+
+  say() {
+    var self = this;
+    var synth = null;
+    try { synth = window.speechSynthesis; } catch (e) { synth = null; }
+    if (!synth) { this.setState({ blocked: true }); return; }
+    try {
+      synth.cancel();
+      var u = new SpeechSynthesisUtterance(this.line);
+      u.rate = 0.98;
+      u.pitch = 1;
+      var voices = synth.getVoices() || [];
+      for (var i = 0; i < voices.length; i++) {
+        if (/en[-_]GB/i.test(voices[i].lang)) { u.voice = voices[i]; break; }
+      }
+      u.onend = function () { self.setState({ speaking: false }); };
+      synth.speak(u);
+      this.setState({ speaking: true, blocked: false });
+      clearTimeout(this.vcheck);
+      this.vcheck = setTimeout(function () {
+        var live = false;
+        try { live = synth.speaking || synth.pending; } catch (e) { live = false; }
+        if (!live) self.setState({ speaking: false, blocked: true });
+      }, 700);
+    } catch (e) {
+      this.setState({ speaking: false, blocked: true });
+    }
+  }
+
+  hush() { try { if (window.speechSynthesis) window.speechSynthesis.cancel(); } catch (e) {} }
+
+  stopVoice() { clearTimeout(this.vt); clearTimeout(this.vcheck); this.hush(); }
+
+  voiceVals() {
+    var self = this;
+    var st = this.state || {};
+    var on = !!st.voiceOn;
+    var blocked = !!st.blocked;
+    return {
+      voiceOn: on && !blocked,
+      voiceBlocked: on && blocked,
+      voiceOff: !on,
+      speaking: !!st.speaking,
+      voiceLabel: !on ? 'Narration off' : (blocked ? 'Tap to play narration' : 'Narration on'),
+      voiceIcon: on && !blocked
+        ? 'M11 5 6 9H3v6h3l5 4zM16 9.5a4 4 0 0 1 0 5M19 7a8 8 0 0 1 0 10'
+        : 'M11 5 6 9H3v6h3l5 4zM17 9.5l4.5 5M21.5 9.5l-4.5 5',
+      toggleVoice: function () {
+        var next = !on || blocked;
+        try { sessionStorage.setItem('tb-voice', next ? 'on' : 'off'); } catch (e) {}
+        self.setState({ voiceOn: next, blocked: false });
+        if (next) self.say(); else { self.hush(); self.setState({ speaking: false }); }
+      },
+      replayVoice: function () {
+        try { sessionStorage.setItem('tb-voice', 'on'); } catch (e) {}
+        self.setState({ voiceOn: true, blocked: false });
+        self.say();
+      }
+    };
+  }
+
+
+  /* Picking a persona is the user gesture browsers require before they will
+     speak, so the intro is said here, on the click, and the screen we land on
+     picks the narration up from there. */
+  arm(intro) {
+    try { sessionStorage.setItem('tb-voice', 'on'); } catch (e) {}
+    this.line = intro;
+    this.setState({ voiceOn: true, blocked: false });
+    this.say();
+  }
+
+  renderVals() {
+    var self = this;
+    var vals = this.voiceVals();
+    vals.byPersona = this.state.tab === 'persona';
+    vals.byStory = this.state.tab === 'story';
+    vals.showPersona = function () { self.setState({ tab: 'persona' }); };
+    vals.showStory = function () { self.setState({ tab: 'story' }); };
+    vals.startPractice = function () { self.arm('Starting as Head of AI and Data Practice. Here is where your team\'s judgement enters the market map.'); };
+    vals.startVentures = function () { self.arm('Starting as Ventures Lead. Here is the company universe, scored against your thesis.'); };
+    vals.startClient = function () { self.arm('Starting as Client Account Lead. Here is what you can put in front of a client on Monday.'); };
+    vals.startTour = function () { self.arm('Starting from the beginning. One question, five agents, and a thesis that keeps itself current.'); };
+    vals.startSilent = function () {
+      try { sessionStorage.setItem('tb-voice', 'off'); } catch (e) {}
+      self.hush();
+    };
+    return vals;
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Thesis evolution</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;background:#ffffff;color:#0a0a0a}
+a{color:#9333ea;text-decoration:none}a:hover{color:#7e22ce}
+@keyframes riseIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes popIn{0%{opacity:0;transform:scale(.7)}60%{transform:scale(1.08)}100%{opacity:1;transform:scale(1)}}
+@keyframes lineGrow{from{width:0}to{width:100%}}
+.rise{opacity:0;animation:riseIn .55s cubic-bezier(.16,1,.3,1) forwards}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:42px;padding:0 20px;border-radius:6px;border:1px solid #d4d4d4;background:#ffffff;font-size:13.5px;font-weight:500;color:#171717;font-family:inherit;cursor:pointer;box-sizing:border-box}
+.btn:hover{background:#f6f6f6;color:#171717}
+.btn-p{background:#171717;border-color:#171717;color:#ffffff}
+.btn-p:hover{background:#262626;color:#ffffff}
+.vchip{display:flex;align-items:center;gap:8px;padding:8px 13px;border:1px solid #e5e5e5;border-radius:8px;background:#ffffff;flex-shrink:0}
+.vchip b{font-size:12.5px;font-weight:600}
+.vchip span{font-size:11px;color:#8b8b8b}
+.dcard{box-sizing:border-box;flex-grow:1;border-radius:10px;padding:22px 24px;border:1px solid #e5e5e5;background:#ffffff}
+.dcard h3{margin:0 0 4px;font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#9c9c9c}
+.dcard p{margin:12px 0 0;font-size:15px;line-height:25px;color:#333333}
+.chg{display:flex;align-items:center;gap:10px;font-size:12.5px;color:#525252;padding:9px 0;border-bottom:1px solid #f1f1f1}
+.eq i{display:block;width:2px;background:#9333ea;border-radius:1px;animation:eqb .85s ease-in-out infinite}
+.eq i:nth-child(2){animation-delay:.16s}
+.eq i:nth-child(3){animation-delay:.32s}
+@keyframes eqb{0%,100%{height:3px}50%{height:12px}}
+</style>
+</helmet>
+
+<div style="position: relative; width: 1440px; height: 900px; box-sizing: border-box; display: flex; background: #ffffff; overflow: hidden;">
+  <div style="width: 240px; flex-shrink: 0; box-sizing: border-box; background: #f6f6f6; border-right: 1px solid #e5e5e5; display: flex; flex-direction: column;">
+    <div style="height: 52px; box-sizing: border-box; padding: 0 14px; display: flex; align-items: center; gap: 9px; border-bottom: 1px solid #ececec;">
+      <span style="font-size: 20px; line-height: 1; font-weight: 700; color: #a100ff;">&gt;</span>
+      <span style="display: flex; flex-direction: column; line-height: 1.25;">
+        <span style="font-size: 12.5px; font-weight: 600;">Accenture</span>
+        <span style="font-size: 10.5px; color: #737373;">Spotlight Platform</span>
+      </span>
+      <span style="margin-left: auto; font-size: 9.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #525252; border: 1px solid #dcdcdc; border-radius: 4px; padding: 1.5px 5px;">Beta</span>
+    </div>
+
+    <div style="padding: 12px 12px 6px;">
+      <a href="Thesis.dc.html" style="display: flex; align-items: center; justify-content: center; gap: 7px; height: 32px; border-radius: 6px; background: #171717; color: #ffffff; font-size: 12.5px; font-weight: 500;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>New Thesis
+      </a>
+    </div>
+
+    <nav style="padding: 6px 12px; display: flex; flex-direction: column; gap: 1px;">
+      <a href="GlobeLive.dc.html" style="display: flex; align-items: center; gap: 9px; height: 34px; padding: 0 9px; border-radius: 4px; font-size: 13px; color: #404040;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#525252" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"></path></svg>Home
+      </a>
+      <span style="display: flex; align-items: center; gap: 9px; height: 34px; padding: 0 9px; border-radius: 4px; font-size: 13px; font-weight: 500; color: #0a0a0a; background: #ececec;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#171717" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h11l4 4v12H5z"></path><path d="M9 12h7M9 16h5"></path></svg>Theses
+      </span>
+      <a href="Companies.dc.html" style="display: flex; align-items: center; gap: 9px; height: 34px; padding: 0 9px; border-radius: 4px; font-size: 13px; color: #404040;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#525252" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V8l6-4 6 4v13"></path><path d="M15 21V11l6 3v7"></path></svg>Companies
+      </a>
+      <a href="Signal.dc.html" style="display: flex; align-items: center; justify-content: space-between; height: 34px; padding: 0 9px; border-radius: 4px; font-size: 13px; color: #404040;">
+        <span style="display: flex; align-items: center; gap: 9px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#525252" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12h4l2.5-7 4 14 2.5-7h5"></path></svg>Signals
+        </span>
+        <span style="font-size: 10.5px; font-weight: 600; color: #ffffff; background: #d97706; border-radius: 9999px; padding: 1px 6px;">7</span>
+      </a>
+      <span style="display: flex; align-items: center; gap: 9px; height: 34px; padding: 0 9px; border-radius: 4px; font-size: 13px; color: #404040;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#525252" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h7l2 2h9v10H3z"></path></svg>Deal Rooms
+      </span>
+      <span style="display: flex; align-items: center; gap: 9px; height: 34px; padding: 0 9px; border-radius: 4px; font-size: 13px; color: #404040;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#525252" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="8" ry="3"></ellipse><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"></path><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"></path></svg>Knowledge Base
+      </span>
+    </nav>
+
+    <div style="padding: 16px 12px 6px;">
+      <p style="margin: 0 0 7px 9px; font-size: 10.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #9c9c9c;">Your theses</p>
+      <div style="display: flex; flex-direction: column; gap: 1px;">
+        <span style="display: flex; align-items: center; gap: 8px; height: 32px; padding: 0 9px; border-radius: 4px; font-size: 12.5px; font-weight: 500; color: #0a0a0a; background: #ececec;">
+          <span style="width: 6px; height: 6px; border-radius: 50%; background: #16a34a;"></span>AI Infrastructure
+        </span>
+        <span style="display: flex; align-items: center; gap: 8px; height: 32px; padding: 0 9px; border-radius: 4px; font-size: 12.5px; color: #525252;">
+          <span style="width: 6px; height: 6px; border-radius: 50%; background: #d4d4d4;"></span>Physical AI
+        </span>
+        <span style="display: flex; align-items: center; gap: 8px; height: 32px; padding: 0 9px; border-radius: 4px; font-size: 12.5px; color: #525252;">
+          <span style="width: 6px; height: 6px; border-radius: 50%; background: #d4d4d4;"></span>Enterprise Robotics
+        </span>
+        <span style="display: flex; align-items: center; gap: 8px; height: 32px; padding: 0 9px; border-radius: 4px; font-size: 12.5px; color: #525252;">
+          <span style="width: 6px; height: 6px; border-radius: 50%; background: #d4d4d4;"></span>Sovereign Cloud
+        </span>
+      </div>
+    </div>
+
+    <div style="margin-top: auto; padding: 12px; border-top: 1px solid #ececec; display: flex; align-items: center; gap: 9px;">
+      <span style="width: 26px; height: 26px; border-radius: 9999px; background: #e6dcfa; color: #6d28d9; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center;">NM</span>
+      <span style="display: flex; flex-direction: column; line-height: 1.3;">
+        <span style="font-size: 12px; font-weight: 500;">Nimish M.</span>
+        <span style="font-size: 10.5px; color: #737373;">Accenture Ventures</span>
+      </span>
+      <svg style="margin-left: auto;" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#737373" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 9 4-4 4 4M8 15l4 4 4-4"></path></svg>
+    </div>
+  </div>
+
+  <div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column;">
+
+    <div style="height: 48px; flex-shrink: 0; box-sizing: border-box; border-bottom: 1px solid #e5e5e5; padding: 0 24px; display: flex; align-items: center; gap: 8px;">
+      <a href="Market.dc.html" style="font-size: 12.5px; color: #737373;">AI Infrastructure</a>
+      <span style="font-size: 12.5px; color: #c4c4c4;">/</span>
+      <a href="Signal.dc.html" style="font-size: 12.5px; color: #737373;">Signals</a>
+      <span style="font-size: 12.5px; color: #c4c4c4;">/</span>
+      <span style="font-size: 12.5px; font-weight: 500;">Proposed update</span>
+      <span style="flex-grow: 1;"></span>
+      <span style="font-size: 12px; color: #737373;">Proposed by the Strategy Agent · not yet applied</span>
+    </div>
+
+    <div style="flex-grow: 1; overflow: hidden; box-sizing: border-box; padding: 30px 40px 0; background: #fcfcfc;">
+
+      <div class="rise" style="display: flex; align-items: flex-end; gap: 20px;">
+        <div style="flex-grow: 1;">
+          <h1 style="margin: 0; font-size: 28px; line-height: 34px; font-weight: 600; letter-spacing: -.026em;">How the thesis would change</h1>
+          <p style="margin: 8px 0 0; font-size: 13.5px; color: #525252;">One paragraph in Market Gaps. Everything downstream of it follows automatically.</p>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span class="vchip"><span style="width: 7px; height: 7px; border-radius: 50%; background: #d4d4d4;"></span><b>v1</b><span>Created</span></span>
+          <span style="width: 18px; height: 1px; background: #e0e0e0;"></span>
+          <span class="vchip"><span style="width: 7px; height: 7px; border-radius: 50%; background: #d4d4d4;"></span><b>v2</b><span>Practice lead</span></span>
+          <span style="width: 18px; height: 1px; background: #e0e0e0;"></span>
+          <sc-if value="{{done}}" hint-placeholder-val="{{false}}">
+            <span class="vchip" style="border-color: #cfead9; background: #f6fcf8; animation: popIn .5s cubic-bezier(.16,1,.3,1) both;"><span style="width: 7px; height: 7px; border-radius: 50%; background: #16a34a;"></span><b style="color: #15803d;">v3</b><span style="color: #3f6b50;">Signal</span></span>
+          </sc-if>
+          <sc-if value="{{notDone}}" hint-placeholder-val="{{true}}">
+            <span class="vchip" style="border-style: dashed; border-color: #c4b5fd; background: #fdfcff;"><span style="width: 7px; height: 7px; border-radius: 50%; background: #c4b5fd;"></span><b style="color: #7e22ce;">v3</b><span style="color: #8b7ba8;">Proposed</span></span>
+          </sc-if>
+        </div>
+      </div>
+
+      <div class="rise" style="margin-top: 24px; display: flex; gap: 18px; align-items: stretch; animation-delay: .06s;">
+        <div class="dcard" style="background: #fafafa;">
+          <h3>Original thesis — v2</h3>
+          <span style="font-size: 13px; font-weight: 600; color: #525252;">Market Gaps, paragraph 2</span>
+          <p style="color: #8b8b8b;">“Agent Identity &amp; Access represents one of the largest emerging gaps in enterprise AI infrastructure.”</p>
+          <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid #ececec; display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 11.5px; color: #a3a3a3;">Written 30 days ago · cited 9 sources</span>
+          </div>
+        </div>
+
+        <span style="align-self: center; flex-shrink: 0; width: 34px; height: 34px; border-radius: 9999px; border: 1px solid #e5e5e5; background: #ffffff; display: flex; align-items: center; justify-content: center; color: #9333ea;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </span>
+
+        <div class="dcard" style="border-color: {{propLine}}; border-style: {{propStyle}}; background: {{propBg}};">
+          <h3 style="color: {{propInk}};">{{propTitle}}</h3>
+          <span style="font-size: 13px; font-weight: 600; color: #171717;">Market Gaps, paragraph 2</span>
+          <p style="color: #262626;">“Agent Identity is beginning to consolidate around major platforms. Cross-agent governance and auditability now represent a larger unresolved enterprise opportunity.”</p>
+          <div style="margin-top: 18px; padding-top: 14px; border-top: 1px solid #ececec; display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 11.5px; color: #8b8b8b;">Proposed from 6 new sources · confidence high</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rise" style="margin-top: 20px; display: flex; gap: 18px; animation-delay: .12s;">
+        <div style="flex-grow: 1; box-sizing: border-box; border: 1px solid #e5e5e5; border-radius: 10px; background: #ffffff; padding: 18px 22px;">
+          <p style="margin: 0 0 6px; font-size: 10.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #737373;">What else moves if you accept</p>
+          <div class="chg"><span style="width: 6px; height: 6px; border-radius: 50%; background: #d97706;"></span>Agent Identity &amp; Access drops from rank 1 to rank 3 in Market Gaps<span style="margin-left: auto; color: #a3a3a3;">Section 4</span></div>
+          <div class="chg"><span style="width: 6px; height: 6px; border-radius: 50%; background: #16a34a;"></span>Cross-Agent Governance &amp; Auditability is added as a named gap<span style="margin-left: auto; color: #a3a3a3;">Section 4</span></div>
+          <div class="chg"><span style="width: 6px; height: 6px; border-radius: 50%; background: #1d4ed8;"></span>3 companies re-scored, 2 newly discovered companies added to the universe<span style="margin-left: auto; color: #a3a3a3;">Section 5</span></div>
+          <div class="chg" style="border-bottom: 0;"><span style="width: 6px; height: 6px; border-radius: 50%; background: #1d4ed8;"></span>Recommended areas reordered; the executive deck regenerates 4 slides<span style="margin-left: auto; color: #a3a3a3;">Section 6</span></div>
+        </div>
+
+        <div style="width: 340px; flex-shrink: 0; box-sizing: border-box; border: 1px solid #e5e5e5; border-radius: 10px; background: #ffffff; padding: 18px 20px; display: flex; flex-direction: column;">
+          <sc-if value="{{idle}}" hint-placeholder-val="{{true}}">
+            <div>
+              <p style="margin: 0 0 4px; font-size: 13.5px; font-weight: 600;">Apply this update?</p>
+              <p style="margin: 0 0 16px; font-size: 12.5px; line-height: 19px; color: #737373;">Accepting writes version 3 and tells the three people watching this thesis what changed.</p>
+              <button type="button" class="btn btn-p" onClick="{{accept}}" style="width: 100%;">Accept</button>
+              <div style="display: flex; gap: 8px; margin-top: 8px;">
+                <button type="button" class="btn" style="flex-grow: 1;">Modify</button>
+                <button type="button" class="btn" style="flex-grow: 1;">Reject</button>
+              </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{working}}" hint-placeholder-val="{{false}}">
+            <div style="display: flex; align-items: center; gap: 11px;">
+              <span style="width: 16px; height: 16px; border-radius: 50%; border: 2px solid #e0d4fa; border-top-color: #9333ea; animation: spin .8s linear infinite; display: inline-block; flex-shrink: 0;"></span>
+              <span style="font-size: 13px; color: #525252;">Applying the update and regenerating the deck…</span>
+            </div>
+          </sc-if>
+          <sc-if value="{{done}}" hint-placeholder-val="{{false}}">
+            <div style="animation: riseIn .5s cubic-bezier(.16,1,.3,1) both;">
+              <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; color: #15803d;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12.5 5.2 5.2L20 7"></path></svg>Thesis updated to Version 3
+              </span>
+              <p style="margin: 10px 0 16px; font-size: 12.5px; line-height: 19px; color: #525252;">Applied 4 seconds ago. Three collaborators notified. Monitoring continues on both gaps.</p>
+              <a class="btn btn-p" href="GlobeLive.dc.html" style="width: 100%;">Back to your globe
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+              </a>
+            </div>
+          </sc-if>
+          <div style="margin-top: auto; padding-top: 16px;">
+            <p style="margin: 0; font-size: 11.5px; line-height: 17px; color: #8b8b8b;">Every version is kept. You can read what the thesis said on any date, and why it changed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="position: absolute; right: 22px; bottom: 20px; z-index: 60; display: flex; align-items: center; gap: 4px; height: 44px; box-sizing: border-box; background: rgba(255,255,255,.95); border: 1px solid #e5e5e5; border-radius: 9999px; padding: 0 6px 0 14px; box-shadow: 0 5px 20px rgba(0,0,0,.08); backdrop-filter: blur(4px);">
+    <sc-if value="{{speaking}}" hint-placeholder-val="{{true}}">
+      <span class="eq" style="display: inline-flex; align-items: flex-end; gap: 2px; height: 12px; margin-right: 6px;"><i></i><i></i><i></i></span>
+    </sc-if>
+    <span style="font-size: 11.5px; font-weight: 500; color: #525252; white-space: nowrap;">{{voiceLabel}}</span>
+    <button type="button" onClick="{{toggleVoice}}" aria-label="Turn narration on or off" style="width: 36px; height: 36px; margin-left: 6px; border: 0; border-radius: 9999px; background: transparent; color: #404040; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{voiceIcon}}"></path></svg>
+    </button>
+    <button type="button" onClick="{{replayVoice}}" aria-label="Replay narration" style="width: 36px; height: 36px; border: 0; border-radius: 9999px; background: transparent; color: #404040; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 6.3"></path><path d="M20 5v6h-6"></path></svg>
+    </button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+var LINE = 'Nothing changes without you. The old paragraph, the proposed one, and everything downstream that moves if you accept. Accept, and it becomes version three.';
+
+class Component extends DCLogic {
+  componentDidMount() { this.initVoice(LINE); }
+  constructor(props) { super(props); this.state = { phase: 'idle' }; }
+  componentWillUnmount() {
+    this.stopVoice(); clearTimeout(this.t); }
+
+  /* ---------- narration ----------
+     Spoken by the browser itself through the Web Speech API: no audio files,
+     no service, nothing to sign in to. The persona picker arms it in session
+     storage; each screen then reads its own line once, and the chip in the
+     corner turns it off for good.
+
+     Browsers require a user gesture before they will speak, and they do not
+     say so — speak() simply does nothing. So after asking we check whether
+     anything actually started, and if it did not the chip invites a tap
+     rather than sitting there claiming to be on. */
+  initVoice(line, autoSpeak) {
+    this.line = line;
+    var stored = null;
+    try { stored = sessionStorage.getItem('tb-voice'); } catch (e) { stored = null; }
+    var armed = stored === null ? true : stored === 'on';
+    this.setState({ voiceOn: armed, speaking: false, blocked: false });
+    if (armed && autoSpeak !== false) {
+      var self = this;
+      this.vt = setTimeout(function () { self.say(); }, 1400);
+    }
+  }
+
+  say() {
+    var self = this;
+    var synth = null;
+    try { synth = window.speechSynthesis; } catch (e) { synth = null; }
+    if (!synth) { this.setState({ blocked: true }); return; }
+    try {
+      synth.cancel();
+      var u = new SpeechSynthesisUtterance(this.line);
+      u.rate = 0.98;
+      u.pitch = 1;
+      var voices = synth.getVoices() || [];
+      for (var i = 0; i < voices.length; i++) {
+        if (/en[-_]GB/i.test(voices[i].lang)) { u.voice = voices[i]; break; }
+      }
+      u.onend = function () { self.setState({ speaking: false }); };
+      synth.speak(u);
+      this.setState({ speaking: true, blocked: false });
+      clearTimeout(this.vcheck);
+      this.vcheck = setTimeout(function () {
+        var live = false;
+        try { live = synth.speaking || synth.pending; } catch (e) { live = false; }
+        if (!live) self.setState({ speaking: false, blocked: true });
+      }, 700);
+    } catch (e) {
+      this.setState({ speaking: false, blocked: true });
+    }
+  }
+
+  hush() { try { if (window.speechSynthesis) window.speechSynthesis.cancel(); } catch (e) {} }
+
+  stopVoice() { clearTimeout(this.vt); clearTimeout(this.vcheck); this.hush(); }
+
+  voiceVals() {
+    var self = this;
+    var st = this.state || {};
+    var on = !!st.voiceOn;
+    var blocked = !!st.blocked;
+    return {
+      voiceOn: on && !blocked,
+      voiceBlocked: on && blocked,
+      voiceOff: !on,
+      speaking: !!st.speaking,
+      voiceLabel: !on ? 'Narration off' : (blocked ? 'Tap to play narration' : 'Narration on'),
+      voiceIcon: on && !blocked
+        ? 'M11 5 6 9H3v6h3l5 4zM16 9.5a4 4 0 0 1 0 5M19 7a8 8 0 0 1 0 10'
+        : 'M11 5 6 9H3v6h3l5 4zM17 9.5l4.5 5M21.5 9.5l-4.5 5',
+      toggleVoice: function () {
+        var next = !on || blocked;
+        try { sessionStorage.setItem('tb-voice', next ? 'on' : 'off'); } catch (e) {}
+        self.setState({ voiceOn: next, blocked: false });
+        if (next) self.say(); else { self.hush(); self.setState({ speaking: false }); }
+      },
+      replayVoice: function () {
+        try { sessionStorage.setItem('tb-voice', 'on'); } catch (e) {}
+        self.setState({ voiceOn: true, blocked: false });
+        self.say();
+      }
+    };
+  }
+
+  screenVals() {
+    var self = this, phase = this.state.phase;
+    var done = phase === 'done';
+    return {
+      idle: phase === 'idle',
+      working: phase === 'working',
+      done: done,
+      notDone: !done,
+      propTitle: done ? 'Applied — v3' : 'Proposed update — v3',
+      propLine: done ? '#cfead9' : '#c4b5fd',
+      propStyle: done ? 'solid' : 'dashed',
+      propBg: done ? '#f6fcf8' : '#fdfcff',
+      propInk: done ? '#15803d' : '#7e22ce',
+      accept: function () {
+        self.setState({ phase: 'working' });
+        clearTimeout(self.t);
+        self.t = setTimeout(function () { self.setState({ phase: 'done' }); }, 1600);
+      }
+    };
+  }
+
+  renderVals() {
+    var vals = this.screenVals();
+    var voice = this.voiceVals();
+    for (var k in voice) vals[k] = voice[k];
+    return vals;
+  }
+}
+</script>
+</body>
+</html>

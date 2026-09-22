@@ -1,0 +1,209 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "Collaborate.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "10 \u00b7 Collaborate",
+      "w": 1440,
+      "x": 1520,
+      "y": 2640
+    },
+    "Companies.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "7 \u00b7 Company universe + AI column",
+      "w": 1440,
+      "x": 3040,
+      "y": 1320
+    },
+    "Company.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "8 \u00b7 Why this company?",
+      "w": 1440,
+      "x": 4560,
+      "y": 1320
+    },
+    "Evolution.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "13 \u00b7 Thesis evolution",
+      "w": 1440,
+      "x": 0,
+      "y": 3960
+    },
+    "FastForward.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "11 \u00b7 30 days later",
+      "w": 1440,
+      "x": 3040,
+      "y": 2640
+    },
+    "Globe.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "4 \u00b7 The globe comes alive",
+      "w": 1440,
+      "x": 4560,
+      "y": 0
+    },
+    "GlobeLive.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "14 \u00b7 Return to the globe",
+      "w": 1440,
+      "x": 1520,
+      "y": 3960
+    },
+    "Main.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "1 \u00b7 Welcome / company onboarding",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "Market.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "5 \u00b7 Current market status",
+      "w": 1440,
+      "x": 0,
+      "y": 1320
+    },
+    "Signal.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "12 \u00b7 New market signal",
+      "w": 1440,
+      "x": 4560,
+      "y": 2640
+    },
+    "Team.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "2 \u00b7 Your AI research team is ready",
+      "w": 1440,
+      "x": 1520,
+      "y": 0
+    },
+    "Thesis.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "3 \u00b7 Create the first thesis",
+      "w": 1440,
+      "x": 3040,
+      "y": 0
+    },
+    "ThesisDoc.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "9 \u00b7 The thesis",
+      "w": 1440,
+      "x": 0,
+      "y": 2640
+    },
+    "Whitespace.dc.html": {
+      "h": 900,
+      "is_interactive": true,
+      "title": "6 \u00b7 Market map / whitespace",
+      "w": 1440,
+      "x": 1520,
+      "y": 1320
+    },
+    "Start.dc.html": {
+      "x": -1520,
+      "y": 0,
+      "w": 1440,
+      "h": 900,
+      "title": "0 \u00b7 Pick a walkthrough (persona + voice)",
+      "is_interactive": true
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-09-22T06:04:28Z",
+    "v": 1
+  },
+  "designSystems": [
+    {
+      "artifact": "https://claude.ai/code/artifact/78a4aaa9-be69-4952-90ec-29300550f116",
+      "copiedAt": "2026-09-22T06:04:28Z",
+      "namespace": "spotlight",
+      "title": "Accenture Spotlight Platform",
+      "version": "1789622439-a1ce"
+    }
+  ],
+  "launch": {
+    "view": "focused",
+    "file": "Start.dc.html"
+  },
+  "notes": {
+    "flow": {
+      "text": "Screen 0 picks a persona; screens 1\u201314 are the product. Every screen links to the next, back to the globe, or across the tabs \u2014 the way the product would.\n\nThree screens respond to input: the AI column on 7, the comment thread on 10, the thesis update on 13.\n\nThe globe screens (4, 11, 14) draw a real orthographic dot globe on canvas \u2014 the land field, camera tour, arcs and pulses are ported from the always-on-v0 Spotlight Home globe.",
+      "w": 420,
+      "x": 6120,
+      "y": 0
+    },
+    "s1": {
+      "kind": "title1",
+      "maxW": 5960,
+      "text": "Stage 1\u20132 \u2014 Understand me, then understand my question",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "s2": {
+      "kind": "title1",
+      "maxW": 5960,
+      "text": "Stage 3 \u2014 Understand the market: globe, status, whitespace, companies",
+      "w": 240,
+      "x": 0,
+      "y": 1020
+    },
+    "s3": {
+      "kind": "title1",
+      "maxW": 5960,
+      "text": "Stage 4 \u2014 Turn intelligence into work, then let it run",
+      "w": 240,
+      "x": 0,
+      "y": 2340
+    },
+    "s4": {
+      "kind": "title1",
+      "maxW": 2960,
+      "text": "Stage 5 \u2014 Never stop learning",
+      "w": 240,
+      "x": 0,
+      "y": 3660
+    },
+    "voice": {
+      "x": -1990,
+      "y": 0,
+      "w": 400,
+      "fill": "purple",
+      "text": "The demo now opens here. Pick a seat and it starts on the screen that seat cares about \u2014 narrated.\n\nNarration is spoken by the browser itself, so there is nothing to sign in to and no audio file to ship. Browsers need a click before they will speak, which is exactly what picking a persona is. The chip at the bottom-right of every screen turns it off, replays the line, or invites a tap if the browser held the first one back.\n\nElevenLabs reads are being recorded separately \u2014 script per screen in artifacts/thesis-builder-demo/NARRATION_SCRIPTS.md."
+    }
+  },
+  "order": [
+    "Start.dc.html",
+    "Main.dc.html",
+    "Team.dc.html",
+    "Thesis.dc.html",
+    "Globe.dc.html",
+    "Market.dc.html",
+    "Whitespace.dc.html",
+    "Companies.dc.html",
+    "Company.dc.html",
+    "ThesisDoc.dc.html",
+    "Collaborate.dc.html",
+    "FastForward.dc.html",
+    "Signal.dc.html",
+    "Evolution.dc.html",
+    "GlobeLive.dc.html"
+  ],
+  "pages": [],
+  "title": "Thesis Builder Demo"
+}

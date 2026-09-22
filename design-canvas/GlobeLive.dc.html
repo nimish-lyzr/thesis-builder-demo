@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Your intelligence system is running</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;background:#f4f4f8;color:#0a0a0a}
+a{color:#9333ea;text-decoration:none}a:hover{color:#7e22ce}
+@keyframes riseIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ping{0%{transform:scale(.7);opacity:.6}75%{transform:scale(2.5);opacity:0}100%{transform:scale(2.5);opacity:0}}
+@keyframes livePulse{0%,100%{opacity:.4}50%{opacity:1}}
+@keyframes sweepBar{0%{transform:translateX(-100%)}100%{transform:translateX(360%)}}
+.rise{opacity:0;animation:riseIn .6s cubic-bezier(.16,1,.3,1) forwards}
+.mk{position:absolute;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:#9333ea;box-shadow:0 0 0 3px rgba(147,51,234,.16),0 0 0 1px #ffffff}
+.mk-discovered{background:#1d4ed8;box-shadow:0 0 0 3px rgba(29,78,216,.16),0 0 0 1px #ffffff}
+.mk-positive{background:#16a34a;box-shadow:0 0 0 3px rgba(22,163,74,.16),0 0 0 1px #ffffff}
+.mk-impacted{background:#d97706;box-shadow:0 0 0 3px rgba(217,119,6,.2),0 0 0 1px #ffffff}
+.mk-neutral{background:#a1a1aa;box-shadow:0 0 0 3px rgba(161,161,170,.18),0 0 0 1px #ffffff}
+.halo{position:absolute;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;border:1.5px solid rgba(147,51,234,.6);animation:ping 3.2s cubic-bezier(.16,1,.3,1) infinite}
+.mkcard{position:absolute;left:13px;top:-13px;white-space:nowrap;background:rgba(255,255,255,.92);border:1px solid #e7e3f0;border-radius:7px;padding:5px 9px;box-shadow:0 5px 20px rgba(0,0,0,.05)}
+.mkcard b{display:block;font-size:11.5px;font-weight:600;color:#171717}
+.mkcard span{display:block;margin-top:1px;font-size:10.5px;color:#6d6d6d}
+.istat{box-sizing:border-box;border:1px solid #ececec;border-radius:8px;background:#ffffff;padding:12px 13px}
+.istat b{display:block;font-size:22px;line-height:26px;font-weight:600;letter-spacing:-.022em;font-variant-numeric:tabular-nums}
+.istat span{display:block;margin-top:2px;font-size:11px;line-height:15px;color:#737373}
+.tcard{box-sizing:border-box;border:1px solid #ececec;border-radius:8px;background:#ffffff;padding:13px 14px;display:flex;flex-direction:column;gap:7px}
+.tcard:hover{border-color:#d4d4d4}
+.cta{display:inline-flex;align-items:center;gap:10px;height:46px;padding:0 24px;border-radius:6px;background:#171717;color:#ffffff;font-size:14.5px;font-weight:500;box-shadow:0 5px 20px rgba(0,0,0,.1)}
+.cta:hover{background:#262626;color:#ffffff}
+.eq i{display:block;width:2px;background:#9333ea;border-radius:1px;animation:eqb .85s ease-in-out infinite}
+.eq i:nth-child(2){animation-delay:.16s}
+.eq i:nth-child(3){animation-delay:.32s}
+@keyframes eqb{0%,100%{height:3px}50%{height:12px}}
+</style>
+</helmet>
+
+<div style="position: relative; width: 1440px; height: 900px; box-sizing: border-box; display: flex; flex-direction: column; background: #f4f4f8; overflow: hidden;">
+
+  <div style="height: 54px; flex-shrink: 0; box-sizing: border-box; border-bottom: 1px solid #e7e5ee; background: rgba(255,255,255,.72); padding: 0 24px; display: flex; align-items: center; gap: 10px;">
+    <span style="font-size: 21px; line-height: 1; font-weight: 700; color: #a100ff;">&gt;</span>
+    <span style="font-size: 14px; font-weight: 600;">Spotlight</span>
+    <span style="width: 1px; height: 13px; background: #e0dde8;"></span>
+    <span style="font-size: 13px; color: #525252;">Home</span>
+    <span style="flex-grow: 1;"></span>
+    <span style="display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 500; color: #15803d; background: #e9f7ee; border: 1px solid #cfead9; border-radius: 9999px; padding: 4px 11px;">
+      <span style="width: 6px; height: 6px; border-radius: 50%; background: #16a34a; animation: livePulse 1.8s ease-in-out infinite;"></span>5 agents active
+    </span>
+    <span style="width: 26px; height: 26px; border-radius: 9999px; background: #e6dcfa; color: #6d28d9; font-size: 10.5px; font-weight: 600; display: flex; align-items: center; justify-content: center; margin-left: 12px;">NM</span>
+  </div>
+
+  <div style="flex-grow: 1; display: flex; min-height: 0;">
+
+    <div style="position: relative; flex-grow: 1; overflow: hidden;">
+      <div style="position: absolute; inset: 0; background: radial-gradient(660px 660px at 48% 48%, rgba(168,110,214,.14), rgba(244,244,248,0) 72%);"></div>
+
+      <canvas id="globeCanvas" width="800" height="800" style="position: absolute; left: 110px; top: 10px; width: 800px; height: 800px;"></canvas>
+
+      <sc-for list="{{markers}}" as="m" hint-placeholder-count="5">
+        <div style="position: absolute; left: 0; top: 0; transform: {{m.tf}}; opacity: {{m.op}}; z-index: {{m.z}}; will-change: transform, opacity;">
+          <span class="{{m.dotClass}}"></span>
+          <span class="halo" style="border-color: {{m.halo}}; opacity: {{m.haloOp}};"></span>
+          <span class="mkcard"><b>{{m.label}}</b><span>{{m.note}}</span></span>
+        </div>
+      </sc-for>
+
+      <div class="rise" style="position: absolute; left: 40px; top: 28px; z-index: 5; max-width: 400px;">
+        <p style="margin: 0; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #8b7ba8;">Spotlight Home</p>
+        <h1 style="margin: 11px 0 0; font-size: 30px; line-height: 36px; font-weight: 600; letter-spacing: -.03em;">Good evening, Nimish.</h1>
+        <p style="margin: 10px 0 0; font-size: 14px; line-height: 22px; color: #525252; max-width: 340px;">Four theses running. Eighteen signals this week. Two of them were worth your attention.</p>
+      </div>
+
+      <div class="rise" style="position: absolute; left: 0; right: 0; bottom: 36px; z-index: 5; display: flex; flex-direction: column; align-items: center; gap: 20px; animation-delay: 1.2s;">
+        <p style="margin: 0; font-size: 21px; line-height: 28px; font-weight: 500; letter-spacing: -.02em; color: #262626; text-align: center; background: rgba(244,244,248,.8); padding: 6px 18px; border-radius: 8px;">Your agents keep working even when you're not.</p>
+        <a class="cta" href="Thesis.dc.html">Create another thesis
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <div style="width: 400px; flex-shrink: 0; box-sizing: border-box; background: #ffffff; border-left: 1px solid #e7e5ee; display: flex; flex-direction: column;">
+
+      <div style="padding: 20px 22px 16px; border-bottom: 1px solid #f0f0f0;">
+        <p style="margin: 0 0 13px; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #737373;">Your intelligence</p>
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px;">
+          <div class="istat rise" style="animation-delay: .1s;"><b>4</b><span>Active theses</span></div>
+          <div class="istat rise" style="animation-delay: .16s;"><b>137</b><span>Companies monitored</span></div>
+          <div class="istat rise" style="animation-delay: .22s;"><b>18</b><span>New signals this week</span></div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 8px;">
+          <div class="istat rise" style="animation-delay: .28s;"><b>3</b><span>Thesis changes</span></div>
+          <div class="istat rise" style="animation-delay: .34s;"><b style="color: #c2410c;">2</b><span>New market gaps</span></div>
+        </div>
+      </div>
+
+      <div style="padding: 16px 22px; flex-grow: 1;">
+        <p style="margin: 0 0 11px; font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: #737373;">Theses</p>
+        <div style="display: flex; flex-direction: column; gap: 9px;">
+
+          <a class="tcard rise" href="Market.dc.html" style="animation-delay: .4s; border-color: #e0d4fa; background: #fdfcff;">
+            <span style="display: flex; align-items: center; gap: 8px;">
+              <span style="width: 7px; height: 7px; border-radius: 50%; background: #16a34a;"></span>
+              <b style="font-size: 13.5px; font-weight: 600; color: #171717;">AI Infrastructure</b>
+              <span style="margin-left: auto; font-size: 11px; color: #8b8b8b;">Updated 3 minutes ago</span>
+            </span>
+            <span style="font-size: 12.5px; line-height: 19px; color: #525252;">New whitespace detected in Cross-Agent Governance.</span>
+            <span style="display: flex; align-items: center; gap: 8px; font-size: 11px; color: #7e22ce; font-weight: 500;">Version 3 · 2 gaps · 137 companies</span>
+          </a>
+
+          <div class="tcard rise" style="animation-delay: .46s;">
+            <span style="display: flex; align-items: center; gap: 8px;">
+              <span style="width: 7px; height: 7px; border-radius: 50%; background: #1d4ed8; animation: livePulse 1.6s ease-in-out infinite;"></span>
+              <b style="font-size: 13.5px; font-weight: 600; color: #171717;">Physical AI</b>
+              <span style="margin-left: auto; font-size: 11px; color: #8b8b8b;">Researching</span>
+            </span>
+            <span style="font-size: 12.5px; line-height: 19px; color: #525252;">38 new companies discovered.</span>
+            <span style="position: relative; height: 3px; border-radius: 2px; background: #f0f0f0; overflow: hidden;"><i style="position: absolute; inset: 0; width: 28%; background: linear-gradient(90deg, rgba(29,78,216,0), #1d4ed8, rgba(29,78,216,0)); animation: sweepBar 2.4s cubic-bezier(.4,0,.2,1) infinite;"></i></span>
+          </div>
+
+          <div class="tcard rise" style="animation-delay: .52s;">
+            <span style="display: flex; align-items: center; gap: 8px;">
+              <span style="width: 7px; height: 7px; border-radius: 50%; background: #d4d4d4;"></span>
+              <b style="font-size: 13.5px; font-weight: 600; color: #171717;">Enterprise Robotics</b>
+              <span style="margin-left: auto; font-size: 11px; color: #8b8b8b;">Checked 2 hours ago</span>
+            </span>
+            <span style="font-size: 12.5px; line-height: 19px; color: #525252;">No material thesis changes.</span>
+          </div>
+
+          <div class="tcard rise" style="animation-delay: .58s;">
+            <span style="display: flex; align-items: center; gap: 8px;">
+              <span style="width: 7px; height: 7px; border-radius: 50%; background: #d4d4d4;"></span>
+              <b style="font-size: 13.5px; font-weight: 600; color: #171717;">Sovereign Cloud</b>
+              <span style="margin-left: auto; font-size: 11px; color: #8b8b8b;">Checked 5 hours ago</span>
+            </span>
+            <span style="font-size: 12.5px; line-height: 19px; color: #525252;">Two regulatory developments logged, neither changes the view.</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding: 14px 22px 18px; border-top: 1px solid #f0f0f0; background: #fafafa;">
+        <p style="margin: 0; font-size: 11.5px; line-height: 17px; color: #737373;">You started with one question. You now have a team of agents watching that market for you.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="position: absolute; right: 22px; bottom: 20px; z-index: 60; display: flex; align-items: center; gap: 4px; height: 44px; box-sizing: border-box; background: rgba(255,255,255,.95); border: 1px solid #e5e5e5; border-radius: 9999px; padding: 0 6px 0 14px; box-shadow: 0 5px 20px rgba(0,0,0,.08); backdrop-filter: blur(4px);">
+    <sc-if value="{{speaking}}" hint-placeholder-val="{{true}}">
+      <span class="eq" style="display: inline-flex; align-items: flex-end; gap: 2px; height: 12px; margin-right: 6px;"><i></i><i></i><i></i></span>
+    </sc-if>
+    <span style="font-size: 11.5px; font-weight: 500; color: #525252; white-space: nowrap;">{{voiceLabel}}</span>
+    <button type="button" onClick="{{toggleVoice}}" aria-label="Turn narration on or off" style="width: 36px; height: 36px; margin-left: 6px; border: 0; border-radius: 9999px; background: transparent; color: #404040; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{voiceIcon}}"></path></svg>
+    </button>
+    <button type="button" onClick="{{replayVoice}}" aria-label="Replay narration" style="width: 36px; height: 36px; border: 0; border-radius: 9999px; background: transparent; color: #404040; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 6.3"></path><path d="M20 5v6h-6"></path></svg>
+    </button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+var MASK = 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB//8////44AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPx/n////+AAAA/AAYAAAAfAAAAAAAAAAAAAAAAEO3v4f////+AAAPgAAAAAAAAcAAAAAAAAAAAAAADAAAfgP////+AAAHAAAAAAAAAMAAAAAAAAAAAAAAA9jjCAAP///+AAAAAAAAHgAAP/8AAPAAAAAAAAAAcAAAAAAD///8AAAAAAAAYAAD//gAAAAAAAAAAAAAe6zs/AAB///4AAAAAAABgDA/////wGAAAAwAEAAAI/wM//AAf//4AAAAAAABwHf/////z/+AABAB//wPI/+sEP4A///wAAAAf8AACHf////////8B8wH/////ww3mB4Af/8AAAAD//xjf7v///////////7A////////+B/g//gAAAAH//4///f///////////GH////////0P5Af4AH4AAPx+H///////////////AAf///////Ng+AP4ADAAA/n////////////////+AD///////8COMAHwAAAAD/P///////////////v8AD/7/////4APwABgAAAAH/P//////////////wfAAA+AH////4APzAAAAAAAD/D/////////////JhgAAAHAAf///8AH/gAAAAAIAOD////////////4AHAAAAQAAP////wH/gAAAAAMBuP////////////wAPgAACAAAH////+f/8AAAAAWAhf////////////AAPAAAAAAAT////+f/+AAAAA3H//////////////+AOAAAAAAAB/////f/8AAAAAHn//////////////+AIAAAAAAAB//////8wAAAAAMf//////////////9AAAAAAAAAA//////2HAAAAAF///////////////4AAAAAAAAAAf/////+AgAAAAD///////////////4AAAAAAAAAAf//////wAAAAAB///yfx/////////wAAAAAAAAAAf/////yAAAAAAB/z/gPj/////////jAAAAAAAAAAf/////gAAAAAA/wY/gDx////////8HAAAAAAAAAAf/////AAAAAAA/gGfnn4////////wAAAAAAAAAAAf////+AAAAAAA/ACY//4///////1gGAAAAAAAAAAP////8AAAAAAA/ACM//4///////hwEAAAAAAAAAAH////4AAAAAAAOLgA//////////4wcAAAAAAAAAAH////4AAAAAAAN/gDC/////////wz8AAAAAAAAAAB////wAAAAAAAf/gAA/////////wDgAAAAAAAAAAA////AAAAAAAA//8YB/////////4EAAAAAAAAAAAAX///AAAAAAAA///f//////////4AAAAAAAAAAAAAX/5BAAAAAAAB//////z///////4AAAAAAAAAAAAAb/gBAAAAAAAH////8/5///////4AAAAAAAAAAAAAF/gBoAAAAAAP////+/4f//////wAAAAAAAAAAAAAE/gAAAAAAAAP////+f8wH/////gAAAAAAAAAAAAAAfgAAAAAAAAf/////P/4D/////IAAAAAAAAAAAAAAPgAQAAAAAAf/////v/8D/+f/4AAAAAAAAAAAAAAAPgwOAAAAAAf/////n/4Af8P+AAAAAAAAAAAAAAAAHxwAwAAAAAf/////n/wAfwH+wAAAAAAAAAAAAAAAB/gAAAAAAAf/////z/gAfgH+AMAAAAAAAAAAAAAAAT8AAAAAAAf/////z+AAfAF/AIAAAAAAAAAAAAAAAB+AAAAAAAf/////94AAOAB/gIAAAAAAAAAAAAAAAAMAAAAAAAf//////AAAOAA/gCAAAAAAAAAAAAAAAAEBQAAAAAP/////+MAAGAAHAFAAAAAAAAAAAAAAAACDfgAAAAH//////8AAGAACAAAAAAAAAAAAAAAAAABP/wAAAAH//////4AABABgADAAAAAAAAAAAAAAAAAP/4AAAAD//////4AABAAQABAAAAAAAAAAAAAAAAAP//gAAAA/H////wAAAACYBgAAAAAAAAAAAAAAAAAH//wAAAAAA////wAAAADYDAAAAAAAAAAAAAAAAAAP//wAAAAAA////gAAAABoPgAAAAAAAAAAAAAAAAAf//4AAAAAA///+AAAAAA4fuQAAAAAAAAAAAAAAAA///+AAAAAA///8AAAAAAYfASAAAAAAAAAAAAAAAA////AAAAAA///4AAAAAAcfYBYAAAAAAAAAAAAAAA////8AAAAAf//4AAAAAAOCEh/AAAAAAAAAAAAAAA/////AAAAAP//wAAAAAAGAAAPgAAAAAAAAAAAAAA/////gAAAAP//wAAAAAADIABPwIAAAAAAAAAAAAAf////gAAAAH//wAAAAAAAOAAPYCAAAAAAAAAAAAAP////AAAAAH//4AAAAAAAACAAMAAAAAAAAAAAAAAP///+AAAAAH//4AAAAAAAAAAAAAAAAAAAAAAAAAAH///+AAAAAH//4AAAAAAAAAHhAAAAAAAAAAAAAAAH///8AAAAAP//4IAAAAAAAAvjAAAAAAAAAAAAAAAD///8AAAAAP//4cAAAAAAAB/jgAAAAAAAAAAAAAAA///8AAAAAP//h4AAAAAAAD/7gAAAAAAAAAAAAAAAf//8AAAAAP//B4AAAAAAAH//wAAAAAAAAAAAAAAAf//4AAAAAH/+AwAAAAAAAf//4AQAAAAAAAAAAAAAf//4AAAAAH//BwAAAAAAB///8AIAAAAAAAAAAAAAf//gAAAAAD//BwAAAAAAD///+AAAAAAAAAAAAAAAf/8AAAAAAD/+BgAAAAAAD////AAAAAAAAAAAAAAAf/8AAAAAAD/8AAAAAAAAD////AAAAAAAAAAAAAAAf/8AAAAAAD/8AAAAAAAAD////AAAAAAAAAAAAAAA//4AAAAAAB/4AAAAAAAAB////AAAAAAAAAAAAAAA//wAAAAAAA/wAAAAAAAAB////AAAAAAAAAAAAAAA//gAAAAAAA/gAAAAAAAAB/h//AAAAAAAAAAAAAAA//AAAAAAAA+AAAAAAAAAB+Av+AAAAAAAAAAAAAAA/8AAAAAAAAAAAAAAAAAAAAAP8AAQAAAAAAAAAAAB/8AAAAAAAAAAAAAAAAAAAAAH8AAIAAAAAAAAAAAB/4AAAAAAAAAAAAAAAAAAAAADQAAOAAAAAAAAAAAB/gAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAB+AAAAAAAAAAAAAAAAAAAAAAAYAAIAAAAAAAAAAAB+AAAAAAAAAAAAAAAAAAAAAAAYAAwAAAAAAAAAAAD8AAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAD4AAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAD8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAAAAAAAAAAADwAACAefH/gAAAAAAAAAAAAAAAAEAAAAAAAAAAAB//8B///////4AAAAAAAAAAAAAAA/AAAAAAAAAAH///8P////////8AAAAAAAAAAAAAB3gAAAAATf//////8//////////+AAAAAAAAAAAgAHgAAAAH////////////////////AAAAAAAB4B////gAAAAP///////////////////4AAAAD////////4AAAAD////////////////////gAAALP///////8AAAAD/////////////////////gAABj////////wAAHg//////////////////////4AAAAD///////8AQ/AB////////////////////+AAAAB//////////AGP//////////////////////AAAAA///////////////////////////////////8A/8AAf///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////';
+
+var NODES = [
+  { id: 'sf', lon: -122.4, lat: 37.8, label: 'San Francisco', note: '38 new companies · Physical AI', kind: 'discovered', pulse: true, at: 200 },
+  { id: 'sea', lon: -122.3, lat: 47.6, label: 'Seattle', note: 'Agent identity consolidating', kind: 'impacted', pulse: true, at: 600 },
+  { id: 'nyc', lon: -74.0, lat: 40.7, label: 'New York', note: 'Watchlist company closed a bank', kind: 'positive', pulse: false, at: 3000 },
+  { id: 'ldn', lon: -0.13, lat: 51.5, label: 'London', note: 'Governance ecosystem forming', kind: 'positive', pulse: true, at: 6000 },
+  { id: 'bln', lon: 13.4, lat: 52.5, label: 'Berlin', note: 'Sovereign cloud activity', kind: 'neutral', pulse: false, at: 9500 },
+  { id: 'tlv', lon: 34.78, lat: 32.08, label: 'Tel Aviv', note: 'AI security cluster, 2 new', kind: 'discovered', pulse: true, at: 13000 },
+  { id: 'blr', lon: 77.59, lat: 12.97, label: 'Bengaluru', note: 'Infrastructure cluster expanding', kind: 'discovered', pulse: false, at: 17000 },
+  { id: 'tky', lon: 139.7, lat: 35.7, label: 'Tokyo', note: 'Enterprise robotics, quiet month', kind: 'neutral', pulse: false, at: 21000 }
+];
+
+var HALOS = { discovered: 'rgba(29,78,216,.6)', positive: 'rgba(22,163,74,.6)', impacted: 'rgba(217,119,6,.7)', neutral: 'rgba(161,161,170,.5)' };
+
+var LINE = 'You started with one question. Four theses now run continuously, a hundred and thirty-seven companies are under watch. Your agents keep working even when you\'re not.';
+
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { now: 0, spin: -96 }; }
+  componentDidMount() {
+    this.initVoice(LINE);
+    this.startGlobe({
+      size: 800, radius: 292, lat0: 32, spin0: -96, speed: 0.014, scan: true,
+      tour: [
+        { at: 0, lon: -92, lat: 36 },
+        { at: 7000, lon: -30, lat: 42 },
+        { at: 14000, lon: 26, lat: 34 },
+        { at: 21000, lon: 96, lat: 24 },
+        { at: 30000, lon: -92, lat: 36 }
+      ],
+      arcs: [
+        { from: [-122.4, 37.8], to: [-74.0, 40.7], at: 1400 },
+        { from: [-74.0, 40.7], to: [-0.13, 51.5], at: 5200 },
+        { from: [-0.13, 51.5], to: [13.4, 52.5], at: 9000 },
+        { from: [13.4, 52.5], to: [34.78, 32.08], at: 13000 },
+        { from: [34.78, 32.08], to: [77.59, 12.97], at: 17000 },
+        { from: [77.59, 12.97], to: [139.7, 35.7], at: 21000 }
+      ]
+    });
+  }
+  componentWillUnmount() {
+    this.stopVoice(); this.stopGlobe(); }
+
+  /* ---------- globe engine (orthographic dot-stipple, canvas) ---------- */
+  buildField() {
+    var bin = atob(MASK), W = 240, H = 120, STEP = 1.5;
+    var lon = [], sin = [], cos = [];
+    for (var j = 0; j < H; j++) {
+      var lat = 90 - (j + 0.5) * STEP;
+      if (lat > 83 || lat < -83) continue;
+      var r = lat * Math.PI / 180, s = Math.sin(r), c = Math.cos(r);
+      for (var i = 0; i < W; i++) {
+        var idx = j * W + i;
+        if (!((bin.charCodeAt(idx >> 3) >> (7 - (idx & 7))) & 1)) continue;
+        lon.push((-180 + (i + 0.5) * STEP) * Math.PI / 180);
+        sin.push(s); cos.push(c);
+      }
+    }
+    this.field = { lon: Float64Array.from(lon), sin: Float64Array.from(sin), cos: Float64Array.from(cos), n: lon.length };
+  }
+
+  /* One point of the sphere, in stage pixels. depth > 0 is the near side. */
+  project(lonDeg, latDeg, lift) {
+    var d = Math.PI / 180;
+    var lo = (lonDeg - this.spin) * d, la = latDeg * d;
+    var c0 = this.cosLat0, s0 = this.sinLat0;
+    var cl = Math.cos(la), sl = Math.sin(la), cd = Math.cos(lo), sd = Math.sin(lo);
+    var x = cl * sd;
+    var y = c0 * sl - s0 * cl * cd;
+    var z = s0 * sl + c0 * cl * cd;
+    var k = this.R * (lift || 1);
+    return { x: this.cx + k * x, y: this.cy - k * y, depth: z, visible: z > 0.04 };
+  }
+
+  polyline(ctx, pts, lift) {
+    var open = false;
+    for (var i = 0; i < pts.length; i++) {
+      var p = this.project(pts[i][0], pts[i][1], lift);
+      if (!p.visible) { open = false; continue; }
+      if (!open) { ctx.moveTo(p.x, p.y); open = true; } else { ctx.lineTo(p.x, p.y); }
+    }
+  }
+
+  drawGlobe(now) {
+    var ctx = this.ctx; if (!ctx) return;
+    var W = this.cw, H = this.ch, cx = this.cx, cy = this.cy, R = this.R;
+    ctx.clearRect(0, 0, W, H);
+
+    this.cosLat0 = Math.cos(this.lat0 * Math.PI / 180);
+    this.sinLat0 = Math.sin(this.lat0 * Math.PI / 180);
+
+    /* the disc */
+    var g = ctx.createRadialGradient(cx - R * 0.38, cy - R * 0.42, R * 0.08, cx, cy, R * 1.02);
+    g.addColorStop(0, 'rgba(253,250,255,0.99)');
+    g.addColorStop(0.62, 'rgba(247,241,253,0.94)');
+    g.addColorStop(1, 'rgba(236,225,248,0.80)');
+    ctx.beginPath(); ctx.arc(cx, cy, R, 0, 6.28319); ctx.fillStyle = g; ctx.fill();
+
+    /* graticule */
+    ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(140,90,190,0.11)';
+    ctx.beginPath();
+    for (var lo = -180; lo < 180; lo += 20) {
+      var mer = []; for (var la = -80; la <= 80; la += 4) mer.push([lo, la]);
+      this.polyline(ctx, mer);
+    }
+    for (var la2 = -60; la2 <= 60; la2 += 20) {
+      var par = []; for (var lo2 = -180; lo2 <= 180; lo2 += 4) par.push([lo2, la2]);
+      this.polyline(ctx, par);
+    }
+    ctx.stroke();
+
+    /* land, as a stipple — alpha quantised into buckets so the fill style is
+       set six times a frame rather than nine thousand */
+    var f = this.field, d = Math.PI / 180, spin = this.spin * d;
+    var c0 = this.cosLat0, s0 = this.sinLat0, DOT = this.dot;
+    var B = 6, buckets = this.buckets;
+    for (var b = 0; b < B; b++) buckets[b].length = 0;
+    for (var i = 0; i < f.n; i++) {
+      var lo3 = f.lon[i] - spin;
+      var cd = Math.cos(lo3), sd = Math.sin(lo3), cl = f.cos[i], sl = f.sin[i];
+      var z = s0 * sl + c0 * cl * cd;
+      if (z <= 0.035) continue;
+      var bi = z >= 0.999 ? B - 1 : (z * B) | 0;
+      var arr = buckets[bi];
+      arr.push(cx + R * cl * sd, cy - R * (c0 * sl - s0 * cl * cd));
+    }
+    for (var b2 = 0; b2 < B; b2++) {
+      var pts = buckets[b2]; if (!pts.length) continue;
+      ctx.fillStyle = 'rgba(168,110,214,' + (0.26 + 0.52 * (b2 / (B - 1))).toFixed(3) + ')';
+      for (var k = 0; k < pts.length; k += 2) ctx.fillRect(pts[k] - DOT, pts[k + 1] - DOT, DOT * 2, DOT * 2);
+    }
+
+    /* the scan — one meridian of light walking the sphere, with a short trail.
+       It is the only thing on this screen that says "still working". */
+    if (this.scan) {
+      var head = ((now / 42) % 360) - 180;
+      for (var t = 0; t < 5; t++) {
+        var lonS = head - t * 5;
+        var pts2 = []; for (var la3 = -82; la3 <= 82; la3 += 3) pts2.push([lonS, la3]);
+        ctx.beginPath(); this.polyline(ctx, pts2);
+        ctx.lineWidth = t === 0 ? 1.8 : 1.2;
+        ctx.strokeStyle = 'rgba(147,51,234,' + (0.30 - t * 0.055).toFixed(3) + ')';
+        ctx.stroke();
+      }
+    }
+
+    /* great-circle arcs between discovery clusters, dashes travelling */
+    var arcs = this.arcs || [];
+    for (var a = 0; a < arcs.length; a++) {
+      var A = arcs[a];
+      if (now < A.at) continue;
+      var age = Math.min(1, (now - A.at) / 900);
+      var dl = ((A.to[0] - A.from[0] + 540) % 360) - 180;
+      ctx.beginPath();
+      var drawn = 0;
+      for (var s = 0; s <= 30; s++) {
+        var u = (s / 30) * age;
+        var p2 = this.project(A.from[0] + dl * u, A.from[1] + (A.to[1] - A.from[1]) * u, 1 + 0.16 * Math.sin(Math.PI * u));
+        if (!p2.visible) { drawn = 0; continue; }
+        if (!drawn) { ctx.moveTo(p2.x, p2.y); drawn = 1; } else ctx.lineTo(p2.x, p2.y);
+      }
+      ctx.setLineDash([5, 7]);
+      ctx.lineDashOffset = -(now / 26) % 12;
+      ctx.lineWidth = 1.4;
+      ctx.strokeStyle = 'rgba(147,51,234,0.42)';
+      ctx.stroke();
+      ctx.setLineDash([]);
+    }
+
+    /* rim */
+    ctx.beginPath(); ctx.arc(cx, cy, R, 0, 6.28319);
+    ctx.lineWidth = 1.25; ctx.strokeStyle = 'rgba(140,90,190,0.34)'; ctx.stroke();
+    ctx.beginPath(); ctx.arc(cx, cy, R + 9, 0, 6.28319);
+    ctx.lineWidth = 1; ctx.strokeStyle = 'rgba(140,90,190,0.10)'; ctx.stroke();
+  }
+
+  startGlobe(opts) {
+    var self = this;
+    var mount = function () {
+      var cv = document.getElementById('globeCanvas');
+      if (!cv) { setTimeout(mount, 60); return; }
+      self.canvas = cv;
+      var dpr = Math.min(2, window.devicePixelRatio || 1);
+      self.cw = opts.size; self.ch = opts.size;
+      cv.width = opts.size * dpr; cv.height = opts.size * dpr;
+      self.ctx = cv.getContext('2d');
+      self.ctx.scale(dpr, dpr);
+      self.cx = opts.size / 2; self.cy = opts.size / 2;
+      self.R = opts.radius; self.dot = 1.15;
+      self.lat0 = opts.lat0 == null ? 16 : opts.lat0;
+      self.spin = opts.spin0 == null ? -40 : opts.spin0;
+      self.scan = !!opts.scan;
+      self.arcs = opts.arcs || [];
+      self.buckets = [[], [], [], [], [], []];
+      self.buildField();
+      var t0 = performance.now(), frame = 0;
+      var loop = function (t) {
+        var now = t - t0;
+        /* the camera follows the newest finding: each tour stop eases the view
+           round to whatever the agents just surfaced, so the node that appears
+           is the node you are looking at */
+        var tour = opts.tour;
+        if (tour) {
+          var tgt = null;
+          for (var q = 0; q < tour.length; q++) if (now >= tour[q].at) tgt = tour[q];
+          if (tgt) {
+            var dl = ((tgt.lon - self.spin + 540) % 360) - 180;
+            self.spin += dl * 0.026;
+            if (tgt.lat != null) self.lat0 += (tgt.lat - self.lat0) * 0.026;
+          }
+        }
+        self.spin += opts.speed == null ? 0.055 : opts.speed;
+        self.drawGlobe(now);
+        if ((frame++ % 2) === 0) self.setState({ now: now, spin: self.spin });
+        self.raf = requestAnimationFrame(loop);
+      };
+      self.raf = requestAnimationFrame(loop);
+    };
+    mount();
+  }
+
+  stopGlobe() { if (this.raf) cancelAnimationFrame(this.raf); }
+
+  /* markers, in stage coordinates, ready for the DOM layer */
+  placeMarkers(list, now, offsetX, offsetY) {
+    var out = [];
+    for (var i = 0; i < list.length; i++) {
+      var m = list[i];
+      var p = this.project(m.lon, m.lat);
+      var born = now - (m.at || 0);
+      var alive = born > 0;
+      var grow = alive ? Math.min(1, born / 520) : 0;
+      var vis = p.visible && p.depth > 0.14 && alive;
+      out.push({
+        key: m.id,
+        label: m.label,
+        note: m.note,
+        kind: m.kind || 'discovered',
+        dotClass: 'mk mk-' + (m.kind || 'discovered') + (m.pulse ? ' mk-live' : ''),
+        cardClass: 'mkcard mkcard-' + (m.side || 'right'),
+        tf: 'translate(' + ((offsetX + p.x) | 0) + 'px,' + ((offsetY + p.y) | 0) + 'px) scale(' + (0.6 + 0.4 * grow).toFixed(2) + ')',
+        op: vis ? (0.22 + 0.78 * Math.min(1, (p.depth - 0.14) / 0.3)) * grow : 0,
+        haloOp: m.pulse ? 1 : 0,
+        z: vis ? 2 : -1
+      });
+    }
+    return out;
+  }
+
+
+
+  /* ---------- narration ----------
+     Spoken by the browser itself through the Web Speech API: no audio files,
+     no service, nothing to sign in to. The persona picker arms it in session
+     storage; each screen then reads its own line once, and the chip in the
+     corner turns it off for good.
+
+     Browsers require a user gesture before they will speak, and they do not
+     say so — speak() simply does nothing. So after asking we check whether
+     anything actually started, and if it did not the chip invites a tap
+     rather than sitting there claiming to be on. */
+  initVoice(line, autoSpeak) {
+    this.line = line;
+    var stored = null;
+    try { stored = sessionStorage.getItem('tb-voice'); } catch (e) { stored = null; }
+    var armed = stored === null ? true : stored === 'on';
+    this.setState({ voiceOn: armed, speaking: false, blocked: false });
+    if (armed && autoSpeak !== false) {
+      var self = this;
+      this.vt = setTimeout(function () { self.say(); }, 1400);
+    }
+  }
+
+  say() {
+    var self = this;
+    var synth = null;
+    try { synth = window.speechSynthesis; } catch (e) { synth = null; }
+    if (!synth) { this.setState({ blocked: true }); return; }
+    try {
+      synth.cancel();
+      var u = new SpeechSynthesisUtterance(this.line);
+      u.rate = 0.98;
+      u.pitch = 1;
+      var voices = synth.getVoices() || [];
+      for (var i = 0; i < voices.length; i++) {
+        if (/en[-_]GB/i.test(voices[i].lang)) { u.voice = voices[i]; break; }
+      }
+      u.onend = function () { self.setState({ speaking: false }); };
+      synth.speak(u);
+      this.setState({ speaking: true, blocked: false });
+      clearTimeout(this.vcheck);
+      this.vcheck = setTimeout(function () {
+        var live = false;
+        try { live = synth.speaking || synth.pending; } catch (e) { live = false; }
+        if (!live) self.setState({ speaking: false, blocked: true });
+      }, 700);
+    } catch (e) {
+      this.setState({ speaking: false, blocked: true });
+    }
+  }
+
+  hush() { try { if (window.speechSynthesis) window.speechSynthesis.cancel(); } catch (e) {} }
+
+  stopVoice() { clearTimeout(this.vt); clearTimeout(this.vcheck); this.hush(); }
+
+  voiceVals() {
+    var self = this;
+    var st = this.state || {};
+    var on = !!st.voiceOn;
+    var blocked = !!st.blocked;
+    return {
+      voiceOn: on && !blocked,
+      voiceBlocked: on && blocked,
+      voiceOff: !on,
+      speaking: !!st.speaking,
+      voiceLabel: !on ? 'Narration off' : (blocked ? 'Tap to play narration' : 'Narration on'),
+      voiceIcon: on && !blocked
+        ? 'M11 5 6 9H3v6h3l5 4zM16 9.5a4 4 0 0 1 0 5M19 7a8 8 0 0 1 0 10'
+        : 'M11 5 6 9H3v6h3l5 4zM17 9.5l4.5 5M21.5 9.5l-4.5 5',
+      toggleVoice: function () {
+        var next = !on || blocked;
+        try { sessionStorage.setItem('tb-voice', next ? 'on' : 'off'); } catch (e) {}
+        self.setState({ voiceOn: next, blocked: false });
+        if (next) self.say(); else { self.hush(); self.setState({ speaking: false }); }
+      },
+      replayVoice: function () {
+        try { sessionStorage.setItem('tb-voice', 'on'); } catch (e) {}
+        self.setState({ voiceOn: true, blocked: false });
+        self.say();
+      }
+    };
+  }
+
+  screenVals() {
+    var now = this.state.now;
+    var markers = this.field ? this.placeMarkers(NODES, now, 110, 10) : [];
+    for (var i = 0; i < markers.length; i++) markers[i].halo = HALOS[markers[i].kind] || HALOS.neutral;
+    return { markers: markers };
+  }
+
+  renderVals() {
+    var vals = this.screenVals();
+    var voice = this.voiceVals();
+    for (var k in voice) vals[k] = voice[k];
+    return vals;
+  }
+}
+</script>
+</body>
+</html>
