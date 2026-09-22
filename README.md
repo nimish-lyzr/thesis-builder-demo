@@ -1,9 +1,11 @@
-# Thesis Builder — narrated product demo
+# Thesis Builder — guided product demo
 
 A clickable, narrated demo of **Spotlight Thesis Builder** for Accenture: one question goes in,
 five agents research the market, a thesis comes out — and then keeps itself current.
 
-Fifteen screens, a persona picker, and a recorded voiceover that paces the walkthrough.
+One product shell, fourteen screens, a persona picker, and a guided tour that sits *beside* the
+product rather than replacing it: every step is a readable card anchored to a real element, and
+narration is optional.
 
 > Representative data. Nothing here connects to a live account, and company names in the
 > universe are deliberately anonymised (`Company A`…`Company H`) so no invented funding or
@@ -15,48 +17,52 @@ Fifteen screens, a persona picker, and a recorded voiceover that paces the walkt
 
 | Path | What it is |
 |---|---|
-| `web/` | The demo people actually open. Plain HTML/CSS/JS, no build step, no dependencies. |
-| `web/audio/` | The narration, one mp3 per screen (ElevenLabs). |
+| `web/` | The demo people open. Plain HTML/CSS/JS, no build step, no dependencies. |
+| `web/audio/` | Screen-level narration from v1 (one mp3 per screen) and the four persona lines. |
+| `web/audio/steps/` | Per-step recordings. Drop files in here — see *Recording* below. |
 | `design-canvas/` | The design source: fifteen `.dc.html` artboards + `canvas.json`, as authored in the Claude Design canvas. |
-| `narration/` | The scripts the voiceover was recorded from, with voice direction and pronunciation notes. |
-| `tools/build_web.py` | Regenerates `web/screens.css` and the view sections of `web/index.html` from `design-canvas/`. |
+| `narration/NARRATION_SCRIPTS_v2.md` | **The per-step scripts to record from** — generated from the tour definitions, so they cannot drift. |
+| `narration/NARRATION_SCRIPTS.md` | v1 screen-level scripts, kept for voice direction and settings. |
+| `tools/build_web.py` | Regenerates `web/screens.css`, the view sections of `web/index.html`, and the recordings manifest. |
+| `tools/export_scripts.mjs` | Regenerates the v2 scripts from `web/app.js`. |
 | `tools/make-landmask.mjs` | Rasterises a country atlas into the base64 land bitmap the globe draws from. |
 
 ## Running it
-
-No build, no server dependencies:
 
 ```bash
 cd web && python3 -m http.server 4599
 ```
 
-Then open <http://localhost:4599>. It must be served over HTTP — opening `index.html` from the
-filesystem will not play audio.
+Then open <http://localhost:4599>. It must be served over HTTP; opening `index.html` from the
+filesystem will not play audio. It is a desktop console and asks for at least 1,100px of width.
 
 ## How it works
 
-**One page, fifteen views.** `web/app.js` hides and shows `<section class="view">` elements and
-keeps the URL hash in sync. Each screen's behaviour — the typewriter, the counters, the AI column,
-the comment thread, the thesis diff — is a small controller registered with `reg(id, …)`.
+**A persistent shell.** `web/index.html` holds one header (brand, current screen, *Viewing as*
+persona menu, *Replay tour*, *Reset demo*), one sidebar, and a canvas the fourteen screens swap
+inside. Screens render at native size and scroll if they need to — nothing is scaled.
 
-**The narration paces the walkthrough.** One reused `<audio>` element; when a file ends, the tour
-advances itself. There are no hardcoded step timings. Browsers refuse to play audio before a user
-gesture and do not say so, so `play()`'s rejection flips the transport bar to *Tap to play
-narration* instead of pretending to be on. Picking a persona is that gesture.
+**Personas choose a route, not a slideshow.** Picking a seat on the launcher opens the console on
+the screen that seat cares about, with a dismissable banner explaining what they will see and a
+**Start the tour** button. Nothing plays before that button.
 
-**The spotlight is measured, not drawn.** On screens that name a `spot` selector, the tour finds
-the live element, scrolls it to centre and tracks its bounding box for a couple of seconds, so the
-highlight stays glued to real layout rather than to a guess.
+**The tour is coach marks, not a transport bar.** A tour is a list of steps; each names a screen
+and an anchor selector. Showing a step switches the screen if needed, polls for the anchored
+element for up to four seconds, scrolls it to centre and tracks its bounding box; a 340px card is
+placed below → above → right → left → centred, clamped to the viewport, and the scrim is cut out
+around the element so the product stays legible. Back, Next, clickable dots, `←`/`→`, `Esc`,
+clicking the scrim, *Skip tour*, and *Replay tour* all work. Navigating away in the product hides
+the card and offers *Resume tour*.
 
-**The globe is real.** `web/globe.js` draws an orthographic dot-stipple globe on canvas: ~9,500
-land dots re-projected every frame, alpha quantised into six buckets so `fillStyle` is set six
-times a frame rather than nine thousand, plus a graticule, travelling-dash great-circle arcs and a
-camera that eases toward each new finding. The land mask is a 240×120 bitmap carried inline as
-~4.8 KB of base64 — no atlas fetch, no network.
+**Audio is subordinate.** Each step plays `web/audio/steps/<screen>-<n>.mp3` if the manifest lists
+it, otherwise the screen-level v1 recording on the screen's first step, otherwise nothing. When a
+file ends the tour advances; without audio a reading-time timer does the same; anything the reader
+clicks in the product pauses auto-advance until they press Next. A blocked `play()` is shown as
+*Play narration* on the card rather than silently failing.
 
-**Screens are a fixed 1440×900 frame scaled to fit the window.** That keeps the demo pixel-identical
-to the approved design on any screen, which is why the markup can be lifted from the artboards
-unchanged.
+**The globe is real.** `web/globe.js` draws an orthographic dot-stipple globe on canvas from an
+inline base64 land bitmap, with a camera that eases toward each new finding. It sizes itself to
+whatever the screen gives it.
 
 ## Editing
 
@@ -66,15 +72,29 @@ Change copy or layout in `design-canvas/*.dc.html`, then:
 python3 tools/build_web.py
 ```
 
-That rewrites `web/screens.css` and the views inside `web/index.html`. Everything else in
-`web/index.html` — the shell, the spotlight, the transport bar — is hand-written and is left alone.
+That rewrites `web/screens.css`, the views inside `web/index.html` (between the
+`<!-- views:start -->` / `<!-- views:end -->` markers), and `web/audio/steps.json`. The shell, the
+tour and the step definitions live in `web/index.html`, `web/app.css` and `web/app.js` and are
+hand-written.
 
-The design system behind the visuals is Accenture Spotlight: Inter throughout, near-black primary
-actions (`#171717`), purple action text (`#9333ea`), the Accenture chevron in `#a100ff`, hairline
-borders at `#e5e5e5`, and the data-viz violet `rgb(168 110 214)` for the globe.
+Tour steps are the `STEPS` object in `web/app.js`: `t` title, `b` body (also the spoken line),
+`sel` a selector inside the screen, `up` how many parents to climb to the block to highlight.
+After changing them, regenerate the scripts:
 
-## Re-recording the narration
+```bash
+node tools/export_scripts.mjs
+```
 
-`narration/NARRATION_SCRIPTS.md` holds every line with its target duration. Files are named for the
-screen they belong to (`01-onboarding.mp3` … `14-globelive.mp3`, plus the four `00-persona-*` lines)
-and the screen list in `web/app.js` points at those names.
+## Recording
+
+1. Record each step from `narration/NARRATION_SCRIPTS_v2.md` — the card body, word for word.
+2. Name each file exactly as listed (`whitespace-2.mp3`, `signal-4.mp3` …) and put it in `web/audio/steps/`.
+3. Run `python3 tools/build_web.py` so the manifest lists it.
+
+Steps without a recording keep working; they just fall back to the v1 screen recording.
+
+## Design system
+
+Accenture Spotlight throughout: Inter, near-black primary actions (`#171717`), purple action text
+(`#9333ea`), the Accenture chevron in `#a100ff`, hairline borders at `#e5e5e5`, and the data-viz
+violet `rgb(168 110 214)` for the globe.

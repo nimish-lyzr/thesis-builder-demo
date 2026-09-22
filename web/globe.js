@@ -53,6 +53,14 @@ Globe.prototype.resize = function (stageScale) {
   this.cy = this.size / 2;
 };
 
+/* The stage is fluid now: the screen tells the globe how big it may be, and
+   the radius keeps the proportion the design was drawn at (300 of 820). */
+Globe.prototype.setSize = function (size, stageScale) {
+  this.size = size;
+  this.R = size * (300 / 820);
+  this.resize(stageScale || 1);
+};
+
 Globe.prototype.project = function (lonDeg, latDeg, lift) {
   var d = Math.PI / 180;
   var lo = (lonDeg - this.spin) * d, la = latDeg * d;

@@ -21,7 +21,7 @@ fifteen stylesheets can share one document without colliding.
 
 Run from the repo root:  python3 tools/build_web.py
 """
-import pathlib, re, sys
+import json, pathlib, re, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / 'design-canvas'
@@ -96,6 +96,37 @@ def strip_dc(markup):
     return markup
 
 
+# Screens that carried the full app sidebar in the canvas build. The web build
+# has one persistent shell, so the inlined copy comes out.
+SHELL_SCREENS = {'market', 'whitespace', 'companies', 'company', 'thesis',
+                 'collaborate', 'signal', 'evolution'}
+# Screens that drew their own brand bar across the top; the shell header
+# replaces it.
+BARRED_SCREENS = {'start', 'team', 'question', 'globe', 'fastforward', 'globelive'}
+
+SIDEBAR_OPEN = '<div style="width: 240px; flex-shrink: 0; box-sizing: border-box; background: #f6f6f6; border-right: 1px solid #e5e5e5; display: flex; flex-direction: column;">'
+MAIN_OPEN = '<div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column;">'
+
+
+def unchrome(body, vid):
+    """Fluid root, and no chrome the shell already provides."""
+    # the artboard frame becomes a fluid page that fills the canvas
+    body = re.sub(r'(<div style=")(?:position: relative; )?width: 1440px; height: 900px; box-sizing: border-box;',
+                  r'\1position: relative; width: 100%; min-height: 100%; box-sizing: border-box;', body, count=1)
+    if vid in SHELL_SCREENS:
+        a = body.find(SIDEBAR_OPEN)
+        b = body.find(MAIN_OPEN)
+        if a == -1 or b == -1 or b < a:
+            sys.exit('sidebar block not found in ' + vid)
+        body = body[:a] + body[b:]
+    if vid in BARRED_SCREENS:
+        m = re.search(r'\n  <div style="height: (?:54|60)px; flex-shrink: 0;.*?\n  </div>\n', body, flags=re.S)
+        if not m:
+            sys.exit('brand bar not found in ' + vid)
+        body = body[:m.start()] + '\n' + body[m.end():]
+    return body
+
+
 def main():
     css_all, sections = [], []
     for vid, board in ORDER:
@@ -104,6 +135,7 @@ def main():
                        + scope_css(re.search(r'<style>(.*?)</style>', src, re.S).group(1), vid))
         body = re.search(r'<x-dc>(.*?)</x-dc>', src, re.S).group(1)
         body = re.sub(r'<helmet>.*?</helmet>', '', body, flags=re.S).strip()
+        body = unchrome(body, vid)
         # the canvas build has a per-artboard narration chip; the web build has
         # one transport bar instead
         body = re.sub(r'\n  <div style="position: absolute; right: 22px; bottom: 20px;.*?\n  </div>\n',
@@ -120,7 +152,12 @@ def main():
     a = page.index('<!-- views:start -->') + len('<!-- views:start -->')
     b = page.index('<!-- views:end -->')
     (WEB / 'index.html').write_text(page[:a] + '\n' + '\n'.join(sections) + '\n' + page[b:])
-    print('wrote web/screens.css and %d views into web/index.html' % len(sections))
+    steps_dir = WEB / 'audio' / 'steps'
+    steps_dir.mkdir(parents=True, exist_ok=True)
+    recorded = sorted(f.name for f in steps_dir.glob('*.mp3'))
+    (WEB / 'audio' / 'steps.json').write_text(json.dumps(recorded))
+    print('wrote web/screens.css, %d views into web/index.html, %d per-step recordings in the manifest'
+          % (len(sections), len(recorded)))
 
 
 if __name__ == '__main__':
