@@ -1,0 +1,282 @@
+{
+ "collaborate-1.mp3": {
+  "chars": 162,
+  "fingerprint": "058c9c834230ffc86d876b1b5626aa57a3a705714fab30a89db5148bfddbf381",
+  "generated_at": "2026-09-22T23:18:37",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "collaborate-2.mp3": {
+  "chars": 105,
+  "fingerprint": "de74329732f189d654753940e33c734a6dea537de86d67742e73b16045e8b54a",
+  "generated_at": "2026-09-22T23:18:37",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "collaborate-3.mp3": {
+  "chars": 151,
+  "fingerprint": "fe915f9e9d4da3474776974041dc55dddb67485dfd6402594f6d6cadb8bb3295",
+  "generated_at": "2026-09-22T23:18:37",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "companies-1.mp3": {
+  "chars": 141,
+  "fingerprint": "35c0f66b6873c67ba1462aab9d3b076f90bbdca6b20f9c544b905abd38ec26f1",
+  "generated_at": "2026-09-22T23:18:29",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "companies-2.mp3": {
+  "chars": 174,
+  "fingerprint": "8c37958e2e38732d1acddbeee0cd92ec50adb5252bb49ac6dd275367573a03ae",
+  "generated_at": "2026-09-22T23:18:31",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "companies-3.mp3": {
+  "chars": 97,
+  "fingerprint": "577472b3ecd34bf6394cc43dc5de4c60ed5f22d5e2eeb11d1425649ef23a0573",
+  "generated_at": "2026-09-22T23:18:30",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "company-1.mp3": {
+  "chars": 154,
+  "fingerprint": "d762a8783cecbfaec0b5c676113f382dd7dbab017761267d37d80f96b885c721",
+  "generated_at": "2026-09-22T23:18:31",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "company-2.mp3": {
+  "chars": 211,
+  "fingerprint": "7b2db879177460461b8b6898cf96863e30edd9973685e91a10036185d343cd31",
+  "generated_at": "2026-09-22T23:18:33",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "company-3.mp3": {
+  "chars": 126,
+  "fingerprint": "488aece34992f78ded84ec4398887d299122c8b7016211c1d834fb7f14d82256",
+  "generated_at": "2026-09-22T23:18:33",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "company-4.mp3": {
+  "chars": 138,
+  "fingerprint": "14f7a824a8b6aac46db716b8a695ae11174102ae624fc6f0373c4d72e949bd5b",
+  "generated_at": "2026-09-22T23:18:33",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "evolution-1.mp3": {
+  "chars": 80,
+  "fingerprint": "048785b8cd38f6e6a9098fd7875a093ef10888e0bfd2deec8c934326384ec570",
+  "generated_at": "2026-09-22T23:18:43",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "evolution-2.mp3": {
+  "chars": 156,
+  "fingerprint": "45602336126351df9188a14d5f02284b2d394220a8c095419955eadfb98adc2e",
+  "generated_at": "2026-09-22T23:18:44",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "evolution-3.mp3": {
+  "chars": 99,
+  "fingerprint": "40f7d15988daa0a5bcbe1a005eed1da50b9e2d862cfafe2c497c6a464698adc4",
+  "generated_at": "2026-09-22T23:18:44",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "fastforward-1.mp3": {
+  "chars": 154,
+  "fingerprint": "4e44fec85d19b2a44bdc67b903cd5c5ed35754634a3a65aa2acbe565a7e085d8",
+  "generated_at": "2026-09-22T23:18:39",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "fastforward-2.mp3": {
+  "chars": 148,
+  "fingerprint": "e1b85036dcf376d604559216265476277605d20ae70d4432ab172c76b50bcfc3",
+  "generated_at": "2026-09-22T23:18:39",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "globe-1.mp3": {
+  "chars": 140,
+  "fingerprint": "7b6a8b33d6e76e9e3c0d627f406a4df3e5a6ce3a28cf799b44ac50471a3c5924",
+  "generated_at": "2026-09-22T23:18:24",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "globe-2.mp3": {
+  "chars": 133,
+  "fingerprint": "ec8f6e9bc4d0b2b198453e970e6d9ad8c245bbb73a4d411e19c20029c0796ff7",
+  "generated_at": "2026-09-22T23:18:24",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "globe-3.mp3": {
+  "chars": 84,
+  "fingerprint": "0e77d666a01e5342092da6e842c60e17ccbfd9e689317bcff3647d52e247ec8c",
+  "generated_at": "2026-09-22T23:18:26",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "globelive-1.mp3": {
+  "chars": 123,
+  "fingerprint": "934f1ed254b044e90a1bf5e2aae78cac6790ec10949e923d684e1b4ceeaea950",
+  "generated_at": "2026-09-22T23:18:44",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "globelive-2.mp3": {
+  "chars": 198,
+  "fingerprint": "81cc75b89dd42fa3007cc87b5d2f6dacc8f56346d9220a8c2fd51eeafaf603c2",
+  "generated_at": "2026-09-22T23:18:47",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "globelive-3.mp3": {
+  "chars": 149,
+  "fingerprint": "3e01dc3327e13099d13a67eb42fde12f6424d793f2aa4d2e9a5f271e5f5e0286",
+  "generated_at": "2026-09-22T23:18:46",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "market-1.mp3": {
+  "chars": 181,
+  "fingerprint": "a9085f850f300b5dab5ebe1f1eac8b4a49ac0704bd7cc22af9b7574a154cd034",
+  "generated_at": "2026-09-22T23:18:26",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "market-2.mp3": {
+  "chars": 162,
+  "fingerprint": "199f38fbb9159abf3fcf9d3ded05655fe3d5d4d5ce3aea63f17b9e5e214f4342",
+  "generated_at": "2026-09-22T23:18:26",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "onboarding-1.mp3": {
+  "chars": 180,
+  "fingerprint": "69b7ca56a960c2d9679c5c525fad638258d72484556b351bbdafe536f67b174d",
+  "generated_at": "2026-09-22T23:18:20",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "onboarding-2.mp3": {
+  "chars": 150,
+  "fingerprint": "a189413305e6039fcdca352a1daf5ad4de53335ac710cd6485542f2d2e4fafa8",
+  "generated_at": "2026-09-22T23:18:20",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "onboarding-3.mp3": {
+  "chars": 143,
+  "fingerprint": "9b99252f501089768e4c658cb01f04df065eb0128fc9ec88e540bdf887e3ecac",
+  "generated_at": "2026-09-22T23:18:20",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "question-1.mp3": {
+  "chars": 147,
+  "fingerprint": "6c3a36ea612ce7c23db93531fadef108832bfedbfe390c1db5f6e0ddfe3da633",
+  "generated_at": "2026-09-22T23:18:22",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "question-2.mp3": {
+  "chars": 188,
+  "fingerprint": "ef4f8794af61f90a52de88928cf435ce27f5db48e29637a02ff762af289ec857",
+  "generated_at": "2026-09-22T23:18:24",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "signal-1.mp3": {
+  "chars": 133,
+  "fingerprint": "58ae5b549a22b61127d7fe67b9af88ac6278a78d63756f8e0764e606bffbc3c6",
+  "generated_at": "2026-09-22T23:18:39",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "signal-2.mp3": {
+  "chars": 107,
+  "fingerprint": "cc071429ea8c1a2018ea5edecddb59e434ec4a3958b387d410718ed34dfe17f5",
+  "generated_at": "2026-09-22T23:18:41",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "signal-3.mp3": {
+  "chars": 177,
+  "fingerprint": "87f826631a2480bf275ea2769c11788093467e509d6fee6b1aeddc0c5417c69b",
+  "generated_at": "2026-09-22T23:18:42",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "signal-4.mp3": {
+  "chars": 178,
+  "fingerprint": "796b06172e5967cdaeefd09b00ddf8e290ffab9d292a683bbb165451f7da901d",
+  "generated_at": "2026-09-22T23:18:41",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "team-1.mp3": {
+  "chars": 168,
+  "fingerprint": "b100ccc4e42d8f3fee3a16d027c2d01524af2db059742c996bee9e1e81d7de89",
+  "generated_at": "2026-09-22T23:18:22",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "team-2.mp3": {
+  "chars": 160,
+  "fingerprint": "842dffd76a72617612b8e3335a0b5e99b9060a77eacc7252333652a514ee1cf1",
+  "generated_at": "2026-09-22T23:18:22",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "thesis-1.mp3": {
+  "chars": 192,
+  "fingerprint": "b8fd2fd588ec851fdf637f18eb8741e06dc4e83bd555ea131cee5efb45f9bf7b",
+  "generated_at": "2026-09-22T23:18:35",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "thesis-2.mp3": {
+  "chars": 124,
+  "fingerprint": "b96a9b277519620bbd9c117a3047aec81538a6ac8f61754d1cf3c5ba7fe0f236",
+  "generated_at": "2026-09-22T23:18:35",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "thesis-3.mp3": {
+  "chars": 136,
+  "fingerprint": "0c45d57e393503fb43a39aa87a5f3d47b5264f8662a3fdf3345f1c280ab8a847",
+  "generated_at": "2026-09-22T23:18:35",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "whitespace-1.mp3": {
+  "chars": 127,
+  "fingerprint": "610c921b428c9f639c8a18a6281f501ad37b62dc81dfaffa5be388514f9f1bac",
+  "generated_at": "2026-09-22T23:18:28",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "whitespace-2.mp3": {
+  "chars": 145,
+  "fingerprint": "9a49b1ce37fd08d5cc0ac4d59bac0eead134353d9f318ab4c294630cd13a2f3d",
+  "generated_at": "2026-09-22T23:18:28",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ },
+ "whitespace-3.mp3": {
+  "chars": 170,
+  "fingerprint": "8845b53da85899b655af1fa946fe5f77bbe04c7e0f18b049597ddcb8186dd6b4",
+  "generated_at": "2026-09-22T23:18:28",
+  "model": "eleven_multilingual_v2",
+  "voice": "l30f87tf05uxyknGdDw6"
+ }
+}
